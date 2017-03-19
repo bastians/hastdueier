@@ -1,15 +1,43 @@
 <?php
-	$answer1 = "Nein. &#128554;";
-	$answer2 = "Ja, riesen Kawenzmänner! &#128526;";
-	$answer3 = "Ja, aber schwer zu finden. &#128564;";
-	$answer4 = "Ja! &#128522;";
-	$answer5 = "Nein. &#128554;";
-	$answer6 = "Nein. &#128554;";
+	// answer set 1
+	$answer1 = array( 
+				'headline' => 'Ja, riesen Kawenzmänner! &#128526;',
+				'addText' => '',
+				'metaDescription' => 'Ja, riesen Kawenzmänner! &#128526;',
+				'media' => ''
+			  );
+			  
+	// answer set 2
+	$answer2 = array( 
+				'headline' => 'Ja, aber schwer zu finden. &#128527',
+				'addText' => '',
+				'metaDescription' => 'Ja, aber schwer zu finden. &#128527',
+				'media' => ''
+			  );
+			  
+	// answer set 3
+	$answer3 = array( 
+				'headline' => 'Ja. &#128515;',
+				'addText' => '',
+				'metaDescription' => 'Ja! &#128515;',
+				'media' => ''
+			  );
 
-	$random = array($answer1, $answer2, $answer3, $answer4, $answer5);
+	// answer set 4
+	$answer4 = array( 
+				'headline' => 'Nein. &#128532;',
+				'addText' => 'Schade! Denn: Eier! Wir brauchen Eier!',
+				'metaDescription' => 'Nein. &#128532;',
+				'media' => '<iframe width="533" height="300" src="https://www.youtube.com/embed/GMnBOQAxe4c?autoplay=1&rel=0&amp;controls=0" frameborder="0" allowfullscreen></iframe>
+				'
+			  );
+	
+	// Define answer sets for lottery; answer 4 is used more often to increase possibility of this answer
+	$random = array($answer1, $answer2, $answer3, $answer4, $answer4, $answer4);
+	
+	// Generate an answer set randomly
 	$output = $random[array_rand($random)];
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -23,7 +51,7 @@
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="http://www.hastdueier.de/index2.php" />
 	<meta property="og:image" content="http://static.fjcdn.com/gifs/Shiny+balls_da3d62_4110790.gif" />
-	<meta property="og:description" content="Hast du Eier? <?php echo $output; ?>" />
+	<meta property="og:description" content="Hast du Eier? <?php echo $output[metaDescription]; ?>" />
 
     <meta name="description" content="Eier, wir brauchen Eier. Hast du Eier? <?php echo $output; ?>">	
 	<meta name="keywords" content="Eier, Olli Kahn, Titan, dicke Eier, Brust, breite Brust, brauchen, wir brauchen Eier, keine Eier, Mut, Stärke, Männlichkeit">	
@@ -66,7 +94,9 @@
 			</div>
 			<div id="loader"></div>
 			<div class="answer">
-				<h1><?php echo $output ?></h1>
+				<h1><?php echo $output[headline]; ?></h1>
+				<p><?php echo $output[addText]; ?></p>
+				<p><?php echo $output[media]; ?></p>
 			</div>
 			<br><br><br>
 			<p>
