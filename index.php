@@ -4,7 +4,8 @@
 				'headline' => 'Ja, riesen Kawenzmänner! &#128526;',
 				'addText' => '',
 				'metaDescription' => 'Ja, riesen Kawenzmänner! &#128526;',
-				'media' => ''
+				'metaMedia' => 'http://media3.giphy.com/media/62PP2yEIAZF6g/giphy.gif',
+				'media' => '<iframe src="//giphy.com/embed/62PP2yEIAZF6g?html5=true" width="480" height="300" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>'
 			  );
 			  
 	// answer set 2
@@ -12,7 +13,8 @@
 				'headline' => 'Ja, aber schwer zu finden. &#128527',
 				'addText' => '',
 				'metaDescription' => 'Ja, aber schwer zu finden. &#128527',
-				'media' => ''
+				'metaMedia' => 'https://media.giphy.com/media/l3q2PZSVUUEsajBIY/giphy.gif',
+				'media' => '<iframe src="//giphy.com/embed/l3q2PZSVUUEsajBIY?html5=true" width="480" height="300" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p>'
 			  );
 			  
 	// answer set 3
@@ -20,7 +22,8 @@
 				'headline' => 'Ja. &#128515;',
 				'addText' => '',
 				'metaDescription' => 'Ja! &#128515;',
-				'media' => ''
+				'metaMedia' => 'https://media4.giphy.com/media/l0HlvcRyVJeO8Gmju/giphy.gif',
+				'media' => '<iframe src="//giphy.com/embed/l0HlvcRyVJeO8Gmju?html5=true" width="480" height="300" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>'
 			  );
 
 	// answer set 4
@@ -28,6 +31,7 @@
 				'headline' => 'Nein. &#128532;',
 				'addText' => 'Schade! Denn: Eier! Wir brauchen Eier!',
 				'metaDescription' => 'Nein. &#128532;',
+				'metaMedia' => 'https://img.youtube.com/vi/GMnBOQAxe4c/0.jpg',
 				'media' => '<iframe width="533" height="300" src="https://www.youtube.com/embed/GMnBOQAxe4c?autoplay=1&rel=0&amp;controls=0" frameborder="0" allowfullscreen></iframe>
 				'
 			  );
@@ -50,7 +54,7 @@
 	<meta property="og:title" content="Eier, wir brauchen Eier." />
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="http://www.hastdueier.de/index2.php" />
-	<meta property="og:image" content="http://static.fjcdn.com/gifs/Shiny+balls_da3d62_4110790.gif" />
+	<meta property="og:image" content="<?php echo $output[metaMedia]; ?>" />
 	<meta property="og:description" content="Hast du Eier? <?php echo $output[metaDescription]; ?>" />
 
     <meta name="description" content="Eier, wir brauchen Eier. Hast du Eier? <?php echo $output; ?>">	
@@ -101,7 +105,7 @@
 			<br><br><br>
 			<p>
 				<span>	
-					<a href="https://twitter.com/share" class="twitter-share-button" data-url="http://www.hastdueier.de" data-text="Eier, wir brauchen Eier. Hast du Eier? <?php echo $output; ?>" data-hashtags="eier,wirbraucheneier">Tweet</a>
+					<a href="https://twitter.com/share" class="twitter-share-button" data-url="http://www.hastdueier.de" data-text="Eier, wir brauchen Eier. Hast du Eier? <?php echo $output[headline]; ?>" data-hashtags="eier,wirbraucheneier">Tweet</a>
 					<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script> 
 				</span>
 				<span>
