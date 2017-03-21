@@ -1,0 +1,12 @@
+{
+    "name": "hastdueier",
+    "description": "Eier, wir brauchen Eier. Hast du Eier?",
+    "license": "MIT",
+    "homepage": "http://hastdueier.de",
+    "scripts": {
+        "cs": "phpcs *.php"
+    },
+    "require": {
+        "squizlabs/php_codesniffer": "2.*"
+    }
+}
