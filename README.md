@@ -1,5 +1,31 @@
 # [hastdueier](http://hastdueier.de)
 
+## API
+
+```
+GET /api/anwser.php
+```
+
+Parameter
+
+- `pretty`: [`true`|`false`] Pretty print JSON output.
+
+Get a random answer.
+
+### Example
+
+```
+$ curl -XGET "http://hastdueier.de/api/answer.php?pretty=true"
+
+{
+    "found": false,
+    "headline": "Nein. &#128532;",
+    "description": "Schade! Denn: Eier! Wir brauchen Eier!",
+    "mediaUrl": "https: //img.youtube.com\/vi\/GMnBOQAxe4c\/0.jpg",
+    "mediaEmbed": "<iframe width=\"533\" height=\"300\" src=\"https://www.youtube.com\/embed\/GMnBOQAxe4c?autoplay=1&rel=0&amp;controls=0\" frameborder=\"0\" allowfullscreen><\/iframe>"
+}
+```
+
 ## Setup using Docker
 
 1. [Install Docker](https://docs.docker.com/engine/getstarted/step_one/)
@@ -15,4 +41,5 @@ docker run -p 8000:80 hastdueier
 
 ```
 open http://localhost:8000
-```
+
+
