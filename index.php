@@ -1,6 +1,7 @@
 <?php
 
 require 'lib/answers-store.php';
+use hastdueier\AnswersStore;
 
 // Generate an answer set randomly
 $answer = AnswersStore::instance()->random();
