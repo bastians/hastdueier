@@ -1,0 +1,25 @@
+[{
+    "found": true,
+    "title": "Ja, riesen Kawenzmänner! &#128526;",
+    "description": "",
+    "mediaUrl": "http://media3.giphy.com/media/62PP2yEIAZF6g/giphy.gif",
+    "mediaEmbed": "<iframe src=\"//giphy.com/embed/62PP2yEIAZF6g?html5=true\" width=\"480\" height=\"300\" frameBorder=\"0\" class=\"giphy-embed\" allowFullScreen></iframe>"
+},{
+    "found": true,
+    "title": "Ja, aber schwer zu finden. &#128527",
+    "description": "",
+    "mediaUrl": "https://media.giphy.com/media/l3q2PZSVUUEsajBIY/giphy.gif",
+    "mediaEmbed": "<iframe src=\"//giphy.com/embed/l3q2PZSVUUEsajBIY?html5=true\" width=\"480\" height=\"300\" frameBorder=\"0\" class=\"giphy-embed\" allowFullScreen></iframe><p>"
+},{
+    "found": true,
+    "title": "Ja! &#128515;",
+    "description": "",
+    "mediaUrl": "https://media4.giphy.com/media/l0HlvcRyVJeO8Gmju/giphy.gif",
+    "mediaEmbed": "<iframe src=\"//giphy.com/embed/l0HlvcRyVJeO8Gmju?html5=true\" width=\"480\" height=\"300\" frameBorder=\"0\" class=\"giphy-embed\" allowFullScreen></iframe>"
+},{
+    "found": false,
+    "title": "Nein. &#128532;",
+    "description": "Schade! Denn: Eier! Wir brauchen Eier!",
+    "mediaUrl": "https://img.youtube.com/vi/GMnBOQAxe4c/0.jpg",
+    "mediaEmbed": "<iframe width=\"533\" height=\"300\" src=\"https://www.youtube.com/embed/GMnBOQAxe4c?autoplay=1&rel=0&amp;controls=0\" frameborder=\"0\" allowfullscreen></iframe>"
+}]
