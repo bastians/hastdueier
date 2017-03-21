@@ -24,6 +24,12 @@ $answer = AnswersStore::instance()->random();
     <meta property="og:image" content="<?php echo $answer['mediaUrl']; ?>" />
     <meta property="og:description" content="Eier, wir brauchen Eier. Hast du Eier? <?php echo $answer['title']; ?>" />
 
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:url" content="https://www.hastdueier.de/">
+    <meta name="twitter:title" content="Eier, wir brauchen Eier.">
+    <meta name="twitter:description" content="Eier, wir brauchen Eier. Hast du Eier? <?php echo $answer['title']; ?>">
+    <meta name="twitter:image" content="<?php echo $answer['mediaUrl']; ?>">
+
     <meta name="description" content="Eier, wir brauchen Eier. Hast du Eier? <?php echo $answer['title']; ?>">
     <meta name="keywords" content="Eier, Olli Kahn, Titan, dicke Eier, Brust, breite Brust, brauchen, wir brauchen Eier, keine Eier, Mut, Stärke, Männlichkeit">
     <meta name="author" content="Der Eiermann.">
