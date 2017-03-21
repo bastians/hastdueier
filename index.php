@@ -20,7 +20,7 @@ $answer = AnswersStore::instance()->random();
 
     <meta property="og:title" content="Eier, wir brauchen Eier." />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="http://www.hastdueier.de/index2.php" />
+    <meta property="og:url" content="http://www.hastdueier.de/" />
     <meta property="og:image" content="<?php echo $answer['mediaUrl']; ?>" />
     <meta property="og:description" content="Eier, wir brauchen Eier. Hast du Eier? <?php echo $answer['title']; ?>" />
 
