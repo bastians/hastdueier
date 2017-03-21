@@ -4,7 +4,7 @@
     "license": "MIT",
     "homepage": "http://hastdueier.de",
     "scripts": {
-        "cs": "phpcs *.php"
+        "cs": "phpcs *.php lib/ api/"
     },
     "require": {
         "squizlabs/php_codesniffer": "2.*"
