@@ -34,10 +34,10 @@ $answer = AnswersStore::instance()->random();
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
 
     <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="css/custom.css" rel="stylesheet">
+    <link href="assets/css/custom.css" rel="stylesheet">
 
 
     <!-- Custom Fonts -->
