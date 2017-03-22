@@ -3,7 +3,7 @@ header('Cache-Control: no-cache, no-store, must-revalidate');
 header('Pragma: no-cache');
 header('Expires: 0');
 
-require 'lib/answers-store.php';
+require __DIR__ . '/vendor/autoload.php';
 use hastdueier\AnswersStore;
 
 // Generate an answer set randomly

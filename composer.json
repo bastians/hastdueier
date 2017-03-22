@@ -6,6 +6,9 @@
     "scripts": {
         "cs": "phpcs *.php lib/ api/"
     },
+    "autoload": {
+        "psr-4": {"hastdueier\\": "lib/"}
+    },
     "require": {
         "squizlabs/php_codesniffer": "2.*"
     }
