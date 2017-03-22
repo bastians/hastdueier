@@ -1,4 +1,4 @@
-# [hastdueier](http://hastdueier.de)
+# [hastdueier](http://hastdueier.de) [![Build Status](https://travis-ci.org/bastians/hastdueier.svg?branch=master)](https://travis-ci.org/bastians/hastdueier)
 
 ## API
 
@@ -45,5 +45,5 @@ open http://localhost:8000
 
 ## Codestyle
 
-The codestyle of hastdueier is enforced by [PHP_CodeSniffer](https://github.com/squizlabs/PHP_CodeSniffer).  
+The codestyle of hastdueier is enforced by [PHP_CodeSniffer](https://github.com/squizlabs/PHP_CodeSniffer).
 To check the code [Composer](https://getcomposer.org/) has to be installed. Afterwards all dependencies have to be installed by running `composer install` on the command line. Now the codestyle can be checked by running `composer cs`.
