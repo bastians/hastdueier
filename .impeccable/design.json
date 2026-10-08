@@ -1,172 +1,67 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-10-08T21:30:00Z",
+  "generatedAt": "2026-10-08T22:00:00Z",
   "title": "Design System: Hast du Eier?",
   "extensions": {
     "colorMeta": {
-      "tower-blue": {
+      "swiss-red": {
         "role": "primary",
-        "displayName": "Tower Blue",
-        "canonical": "#0a5fa8",
+        "displayName": "Swiss Red",
+        "canonical": "#e30613",
         "tonalRamp": [
-          "oklch(15% 0.064 252)",
-          "oklch(26% 0.097 252)",
-          "oklch(38% 0.130 252)",
-          "oklch(49% 0.138 252)",
-          "oklch(61% 0.138 252)",
-          "oklch(72% 0.130 252)",
-          "oklch(84% 0.097 252)",
-          "oklch(95% 0.064 252)"
+          "oklch(15% 0.235 27)",
+          "oklch(26% 0.235 27)",
+          "oklch(38% 0.235 27)",
+          "oklch(49% 0.235 27)",
+          "oklch(61% 0.235 27)",
+          "oklch(72% 0.235 27)",
+          "oklch(84% 0.235 27)",
+          "oklch(95% 0.235 27)"
         ]
       },
-      "tower-blue-deep": {
-        "role": "primary",
-        "displayName": "Tower Blue Deep",
-        "canonical": "#074a85",
-        "tonalRamp": [
-          "oklch(15% 0.064 252)",
-          "oklch(26% 0.097 252)",
-          "oklch(38% 0.116 252)",
-          "oklch(49% 0.116 252)",
-          "oklch(61% 0.116 252)",
-          "oklch(72% 0.116 252)",
-          "oklch(84% 0.097 252)",
-          "oklch(95% 0.064 252)"
-        ]
-      },
-      "pool-turquoise": {
-        "role": "secondary",
-        "displayName": "Pool Turquoise",
-        "canonical": "#0b93a3",
-        "tonalRamp": [
-          "oklch(15% 0.064 209)",
-          "oklch(26% 0.097 209)",
-          "oklch(38% 0.103 209)",
-          "oklch(49% 0.103 209)",
-          "oklch(61% 0.103 209)",
-          "oklch(72% 0.103 209)",
-          "oklch(84% 0.097 209)",
-          "oklch(95% 0.064 209)"
-        ]
-      },
-      "lane-turquoise": {
-        "role": "secondary",
-        "displayName": "Lane Turquoise",
-        "canonical": "#087a88",
-        "tonalRamp": [
-          "oklch(15% 0.064 209)",
-          "oklch(26% 0.090 209)",
-          "oklch(38% 0.090 209)",
-          "oklch(49% 0.090 209)",
-          "oklch(61% 0.090 209)",
-          "oklch(72% 0.090 209)",
-          "oklch(84% 0.090 209)",
-          "oklch(95% 0.064 209)"
-        ]
-      },
-      "safety-red": {
-        "role": "tertiary",
-        "displayName": "Safety Red",
-        "canonical": "#e2231a",
-        "tonalRamp": [
-          "oklch(15% 0.064 29)",
-          "oklch(26% 0.097 29)",
-          "oklch(38% 0.130 29)",
-          "oklch(49% 0.163 29)",
-          "oklch(61% 0.163 29)",
-          "oklch(72% 0.130 29)",
-          "oklch(84% 0.097 29)",
-          "oklch(95% 0.064 29)"
-        ]
-      },
-      "sun-yellow": {
-        "role": "tertiary",
-        "displayName": "Sun Yellow",
-        "canonical": "#ffd400",
-        "tonalRamp": [
-          "oklch(15% 0.064 94)",
-          "oklch(26% 0.097 94)",
-          "oklch(38% 0.130 94)",
-          "oklch(49% 0.163 94)",
-          "oklch(61% 0.163 94)",
-          "oklch(72% 0.130 94)",
-          "oklch(84% 0.097 94)",
-          "oklch(95% 0.064 94)"
-        ]
-      },
-      "tile-white": {
+      "ink": {
         "role": "neutral",
-        "displayName": "Tile White",
-        "canonical": "#f7fbfc",
+        "displayName": "Ink",
+        "canonical": "#0a0a0a",
         "tonalRamp": [
-          "oklch(15% 0.000 214)",
-          "oklch(26% 0.000 214)",
-          "oklch(38% 0.000 214)",
-          "oklch(49% 0.000 214)",
-          "oklch(61% 0.000 214)",
-          "oklch(72% 0.000 214)",
-          "oklch(84% 0.000 214)",
-          "oklch(95% 0.000 214)"
-        ]
-      },
-      "grout": {
-        "role": "neutral",
-        "displayName": "Grout",
-        "canonical": "#d3e8ee",
-        "tonalRamp": [
-          "oklch(15% 0.024 217)",
-          "oklch(26% 0.024 217)",
-          "oklch(38% 0.024 217)",
-          "oklch(49% 0.024 217)",
-          "oklch(61% 0.024 217)",
-          "oklch(72% 0.024 217)",
-          "oklch(84% 0.024 217)",
-          "oklch(95% 0.024 217)"
-        ]
-      },
-      "enamel": {
-        "role": "neutral",
-        "displayName": "Enamel",
-        "canonical": "#fdfefe",
-        "tonalRamp": [
-          "oklch(15% 0.000 197)",
-          "oklch(26% 0.000 197)",
-          "oklch(38% 0.000 197)",
-          "oklch(49% 0.000 197)",
-          "oklch(61% 0.000 197)",
-          "oklch(72% 0.000 197)",
-          "oklch(84% 0.000 197)",
-          "oklch(95% 0.000 197)"
-        ]
-      },
-      "ink-navy": {
-        "role": "neutral",
-        "displayName": "Ink Navy",
-        "canonical": "#062a4d",
-        "tonalRamp": [
-          "oklch(15% 0.064 252)",
-          "oklch(26% 0.076 252)",
-          "oklch(38% 0.076 252)",
-          "oklch(49% 0.076 252)",
-          "oklch(61% 0.076 252)",
-          "oklch(72% 0.076 252)",
-          "oklch(84% 0.076 252)",
-          "oklch(95% 0.064 252)"
+          "oklch(15% 0 0)",
+          "oklch(26% 0 0)",
+          "oklch(38% 0 0)",
+          "oklch(49% 0 0)",
+          "oklch(61% 0 0)",
+          "oklch(72% 0 0)",
+          "oklch(84% 0 0)",
+          "oklch(95% 0 0)"
         ]
       },
       "ink-soft": {
         "role": "neutral",
-        "displayName": "Ink Soft",
-        "canonical": "#2f5878",
+        "displayName": "Soft Ink",
+        "canonical": "#5c5c5c",
         "tonalRamp": [
-          "oklch(15% 0.064 244)",
-          "oklch(26% 0.070 244)",
-          "oklch(38% 0.070 244)",
-          "oklch(49% 0.070 244)",
-          "oklch(61% 0.070 244)",
-          "oklch(72% 0.070 244)",
-          "oklch(84% 0.070 244)",
-          "oklch(95% 0.064 244)"
+          "oklch(15% 0 0)",
+          "oklch(26% 0 0)",
+          "oklch(38% 0 0)",
+          "oklch(49% 0 0)",
+          "oklch(61% 0 0)",
+          "oklch(72% 0 0)",
+          "oklch(84% 0 0)",
+          "oklch(95% 0 0)"
+        ]
+      },
+      "rule": {
+        "role": "neutral",
+        "displayName": "Rule",
+        "canonical": "#0a0a0a",
+        "tonalRamp": [
+          "oklch(15% 0 0)",
+          "oklch(26% 0 0)",
+          "oklch(38% 0 0)",
+          "oklch(49% 0 0)",
+          "oklch(61% 0 0)",
+          "oklch(72% 0 0)",
+          "oklch(84% 0 0)",
+          "oklch(95% 0 0)"
         ]
       },
       "white": {
@@ -174,138 +69,128 @@
         "displayName": "White",
         "canonical": "#ffffff",
         "tonalRamp": [
-          "oklch(15% 0.000 90)",
-          "oklch(26% 0.000 90)",
-          "oklch(38% 0.000 90)",
-          "oklch(49% 0.000 90)",
-          "oklch(61% 0.000 90)",
-          "oklch(72% 0.000 90)",
-          "oklch(84% 0.000 90)",
-          "oklch(95% 0.000 90)"
+          "oklch(15% 0 0)",
+          "oklch(26% 0 0)",
+          "oklch(38% 0 0)",
+          "oklch(49% 0 0)",
+          "oklch(61% 0 0)",
+          "oklch(72% 0 0)",
+          "oklch(84% 0 0)",
+          "oklch(95% 0 0)"
         ]
       }
     },
     "typographyMeta": {
-      "display": {
+      "verdict": {
         "displayName": "Verdict",
-        "purpose": "JA! / NEIN! in the pool, sized from character count against the pool width; cap 40svh, 48svh at 900px+."
+        "purpose": "The answer word. Fit formula min(100cqi / (len x fit), cap); fit .435 at weight 900; cap 42svh phone, 50svh from 900px. JA! rests at 900, NEIN! at 100 (fontWeight shown is the JA! state). The '!' is red."
       },
-      "countdown": {
-        "displayName": "Countdown",
-        "purpose": "3-2-1 in the water before the verdict."
-      },
-      "tower-height": {
-        "displayName": "Tower Height",
-        "purpose": "The painted \"10 m\" on the tower; unit at 0.42em."
+      "verdict-teaser": {
+        "displayName": "Verdict Teaser",
+        "purpose": "'Ja?\\nNein?' on two forced lines at weight 100 during suspense; --len 5, fit .44; cap 42svh phone, 25svh desktop."
       },
       "headline": {
-        "displayName": "Sign Headline",
-        "purpose": "HAST DU EIER? on the enamel sign, uppercase, balanced."
+        "displayName": "Headline",
+        "purpose": "The question 'Hast du Eier?' in the header."
       },
       "title": {
-        "displayName": "Dek",
-        "purpose": "The verdict line with emoji on the pool edge."
+        "displayName": "Title",
+        "purpose": "Answer line (dek) under the verdict; clamp(1.625rem, 2.2vw, 2.125rem) from 900px; balanced wrap."
       },
       "lede": {
         "displayName": "Lede",
-        "purpose": "Optional punchline, max 38ch."
+        "purpose": "Optional second answer line, max 36ch."
       },
       "body": {
         "displayName": "Body",
-        "purpose": "Base reading text and the friend sign (at 700)."
+        "purpose": "Base text."
       },
       "button": {
         "displayName": "Button",
-        "purpose": "Uppercase button labels."
+        "purpose": "Action labels."
       },
-      "label": {
-        "displayName": "Signage Label",
-        "purpose": "Tower meta, toast, rules footer (uppercase) and clip captions (sentence case)."
+      "note": {
+        "displayName": "Note",
+        "purpose": "Tagline (Soft Ink), friend note and toast (600, Ink)."
+      },
+      "caption": {
+        "displayName": "Caption",
+        "purpose": "Clip credit and footer, Soft Ink."
       }
     },
-    "shadows": [
-      {
-        "name": "plate",
-        "value": "0 10px 18px -10px rgba(2,24,48,.55), 0 2px 3px rgba(2,24,48,.2)",
-        "purpose": "Soft downward navy depth under hanging enamel signs, info signs and the clip frame."
-      },
-      {
-        "name": "enamel-rule",
-        "value": "inset 0 0 0 5px #fdfefe, inset 0 0 0 8px #0a5fa8",
-        "purpose": "Inset blue rule on the enamel question sign (navy 7px on the yellow friend sign; white 3px/5px on info signs; 2px/4px on the play badge)."
-      },
-      {
-        "name": "waterline-text",
-        "value": "0 .03em .12em rgba(4,50,60,.45)",
-        "purpose": "Text shadow on the verdict so white stays legible over caustic highlights."
-      }
-    ],
+    "shadows": [],
     "motion": [
       {
         "name": "ease-out",
         "value": "cubic-bezier(.16, 1, .3, 1)",
-        "purpose": "Ripples, ticks, button and sign state transitions."
+        "purpose": "The one easing: weight morph and button/badge state transitions."
       },
       {
-        "name": "ease-fall",
-        "value": "cubic-bezier(.55, 0, 1, .45)",
-        "purpose": "Gravity: the JA! drop."
+        "name": "breathe",
+        "value": "1400ms ease-in-out, font-weight 100 -> 320 -> 100, once",
+        "purpose": "Suspense teaser while the answer is drawn (suspense itself lasts 1400ms even under reduced motion)."
       },
       {
-        "name": "tick",
-        "value": "420ms ease-out, scale 1.35 to 1, opacity 0 to 1",
-        "purpose": "Each countdown number."
+        "name": "inflate",
+        "value": "700ms ease-out both, font-weight 100 -> 900, --lsb .042 -> .016",
+        "purpose": "JA! landing."
       },
       {
-        "name": "wippen",
-        "value": "1400ms ease-out, translateY 7/-3/4/-1px",
-        "purpose": "Question sign bobs like a diving board while counting."
+        "name": "deflate",
+        "value": "1100ms ease-out both, font-weight 900 -> 100, --lsb .059 -> .097",
+        "purpose": "NEIN! landing."
       },
       {
-        "name": "fall",
-        "value": "420ms ease-fall, translateY -70svh to 0, scale .7 to 1",
-        "purpose": "JA! drops into the water."
+        "name": "state-button",
+        "value": "140ms ease-out (background-color, color)",
+        "purpose": "Button hover."
       },
       {
-        "name": "ring",
-        "value": "1600ms ease-out, staggered 0/140/300ms, border 5px to 1px",
-        "purpose": "Three splash rings expand and thin."
-      },
-      {
-        "name": "wobble",
-        "value": "1200ms rAF, feDisplacementMap scale 38*(1-t)^2",
-        "purpose": "Underwater wobble of verdict and rings until the surface settles."
-      },
-      {
-        "name": "klettern",
-        "value": "1000ms steps(4, end), translateY -200px to 0, opacity .2 to 1",
-        "purpose": "NEIN! climbs down rung by rung."
-      },
-      {
-        "name": "caustics",
-        "value": "16s linear infinite, 320px diagonal drift, opacity .36",
-        "purpose": "Light net on the pool floor; paused at .3 for NEIN."
-      },
-      {
-        "name": "sign-in",
-        "value": "260ms ease-out, scale .6 to 1, opacity 0 to 1",
-        "purpose": "Info sign appears after the verdict settles."
-      },
-      {
-        "name": "button",
-        "value": "140ms ease-out; press translateY 2px",
-        "purpose": "Button hover and press."
+        "name": "state-badge",
+        "value": "160ms ease-out (background-color, color)",
+        "purpose": "Play badge hover."
       },
       {
         "name": "reduced-motion",
         "value": "animation: none",
-        "purpose": "All movement becomes instant; countdown pacing is kept."
+        "purpose": "Verdict jumps to its final weight."
       }
     ],
     "breakpoints": [
       {
-        "name": "wide",
+        "name": "desktop",
         "value": "900px"
+      }
+    ],
+    "opticalSideBearing": {
+      "property": "@property --lsb { syntax: '<number>'; inherits: false; initial-value: 0 }",
+      "values": {
+        "J@100": ".042em",
+        "J@900": ".016em",
+        "N@100": ".097em",
+        "N@900": ".059em"
+      },
+      "apply": "margin-inline-start: calc(var(--lsb) * -1em * var(--trim)); --trim 1 on phones (flush-left), 0 from 900px (centred)."
+    },
+    "grid": {
+      "columns": 12,
+      "gutter": "20px phone / 24px desktop",
+      "margin": "20px phone / 48px desktop",
+      "maxWidth": "1440px",
+      "areas": "row 1 verdict 1-12 centred; row 2 text 1-4, actions 5-8, clip 9-12"
+    },
+    "font": {
+      "file": "assets/fonts/hanken-var.woff2",
+      "family": "Hanken Grotesk variable, wght 100-900",
+      "subset": "Latin-1 + German punctuation",
+      "license": "SIL OFL 1.1, no Reserved Font Name; assets/fonts/OFL-hanken-grotesk.txt"
+    },
+    "rasters": [
+      {
+        "path": "assets/img/og-schlicht.jpg",
+        "generated": false,
+        "provenance": "Self-screenshot of index.html?og at 1200x630 via headless Chrome on 2026-10-08: suspense state at weight 100; teaser set on one line 'Ja? Nein?', --len 9, flush-left, --cap 60svh; .fuss/.text/.clip/.actions hidden; .frage 5.5rem. Provenance embedded in the JPEG.",
+        "note": "Clips are third-party embeds (GIPHY; YouTube via youtube-nocookie after a click), not shipped rasters."
       }
     ]
   },
@@ -314,114 +199,132 @@
       "name": "Primary Button",
       "kind": "button",
       "refersTo": "button-primary",
-      "description": "The likeliest next step (Teilen, or \"Und du?\" for visitors from a shared link).",
-      "html": "<button class=\"ds-btn-primary\" type=\"button\"><svg class=\"ds-btn__icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M12 3v12M7 8l5-5 5 5M5 13v7h14v-7\"/></svg><span>Teilen</span></button>",
-      "css": ".ds-btn-primary { display:inline-flex; align-items:center; justify-content:center; gap:.55em; min-height:58px; padding:.8em 1.3em; border:3px solid var(--tower,#0a5fa8); border-radius:10px; font-family:'Barlow','Helvetica Neue',Arial,sans-serif; font-size:1.1875rem; font-weight:700; letter-spacing:.05em; text-transform:uppercase; cursor:pointer; transition:background-color 140ms cubic-bezier(.16,1,.3,1), border-color 140ms cubic-bezier(.16,1,.3,1), translate 140ms cubic-bezier(.16,1,.3,1); background:var(--tower,#0a5fa8); color:#fff; } .ds-btn-primary:hover { background:var(--tower-deep,#074a85); border-color:var(--tower-deep,#074a85); } .ds-btn-primary:active { translate:0 2px; } .ds-btn-primary:focus-visible { outline:3px solid var(--ink,#062a4d); outline-offset:3px; } .ds-btn__icon { width:1.15em; height:1.15em; fill:none; stroke:currentColor; stroke-width:2.6; stroke-linecap:round; stroke-linejoin:round; }"
+      "description": "Ink slab with white label and square-capped icon; 'Teilen' by default, 'Und du?' on a shared link.",
+      "html": "<button class=\"ds-btn ds-btn-primary\" type=\"button\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M12 3v12M7 8l5-5 5 5M5 13v7h14v-7\"/></svg><span>Teilen</span></button>",
+      "css": ".ds-btn { display: inline-flex; align-items: center; justify-content: center; gap: .6em; min-height: 56px; padding: .8em 1.4em; border: 1.5px solid var(--ink, #0a0a0a); border-radius: 0; font-family: var(--font, 'Hanken Grotesk', 'Helvetica Neue', Helvetica, Arial, sans-serif); font-size: 1.0625rem; font-weight: 600; letter-spacing: -.01em; cursor: pointer; transition: background-color 140ms cubic-bezier(.16,1,.3,1), color 140ms cubic-bezier(.16,1,.3,1); } .ds-btn svg { width: 1.1em; height: 1.1em; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: square; stroke-linejoin: miter; } .ds-btn:focus-visible { outline: 2px solid var(--ink, #0a0a0a); outline-offset: 3px; } .ds-btn:active { translate: 0 1px; } .ds-btn:disabled { opacity: .4; cursor: progress; } .ds-btn-primary { background: var(--ink, #0a0a0a); color: var(--white, #fff); } .ds-btn-primary:hover { background: #2b2b2b; }"
     },
     {
       "name": "Secondary Button",
       "kind": "button",
       "refersTo": "button-secondary",
-      "description": "The other action (Nochmal or Teilen), enamel with a blue border.",
-      "html": "<button class=\"ds-btn-secondary\" type=\"button\"><svg class=\"ds-btn__icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M4 12a8 8 0 0 1 14-5.3M20 4v5h-5M20 12a8 8 0 0 1-14 5.3M4 20v-5h5\"/></svg><span>Nochmal</span></button>",
-      "css": ".ds-btn-secondary { display:inline-flex; align-items:center; justify-content:center; gap:.55em; min-height:58px; padding:.8em 1.3em; border:3px solid var(--tower,#0a5fa8); border-radius:10px; font-family:'Barlow','Helvetica Neue',Arial,sans-serif; font-size:1.1875rem; font-weight:700; letter-spacing:.05em; text-transform:uppercase; cursor:pointer; transition:background-color 140ms cubic-bezier(.16,1,.3,1), border-color 140ms cubic-bezier(.16,1,.3,1), translate 140ms cubic-bezier(.16,1,.3,1); background:var(--enamel,#fdfefe); color:var(--ink,#062a4d); } .ds-btn-secondary:hover { background:#dff1f6; } .ds-btn-secondary:active { translate:0 2px; } .ds-btn-secondary:focus-visible { outline:3px solid var(--ink,#062a4d); outline-offset:3px; } .ds-btn__icon { width:1.15em; height:1.15em; fill:none; stroke:currentColor; stroke-width:2.6; stroke-linecap:round; stroke-linejoin:round; }"
+      "description": "White slab with 1.5px ink stroke; hover inverts to ink.",
+      "html": "<button class=\"ds-btn ds-btn-secondary\" type=\"button\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M4 12a8 8 0 0 1 14-5.3M20 4v5h-5M20 12a8 8 0 0 1-14 5.3M4 20v-5h5\"/></svg><span>Nochmal</span></button>",
+      "css": ".ds-btn { display: inline-flex; align-items: center; justify-content: center; gap: .6em; min-height: 56px; padding: .8em 1.4em; border: 1.5px solid var(--ink, #0a0a0a); border-radius: 0; font-family: var(--font, 'Hanken Grotesk', 'Helvetica Neue', Helvetica, Arial, sans-serif); font-size: 1.0625rem; font-weight: 600; letter-spacing: -.01em; cursor: pointer; transition: background-color 140ms cubic-bezier(.16,1,.3,1), color 140ms cubic-bezier(.16,1,.3,1); } .ds-btn svg { width: 1.1em; height: 1.1em; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: square; stroke-linejoin: miter; } .ds-btn:focus-visible { outline: 2px solid var(--ink, #0a0a0a); outline-offset: 3px; } .ds-btn:active { translate: 0 1px; } .ds-btn:disabled { opacity: .4; cursor: progress; } .ds-btn-secondary { background: var(--white, #fff); color: var(--ink, #0a0a0a); } .ds-btn-secondary:hover { background: var(--ink, #0a0a0a); color: var(--white, #fff); }"
     },
     {
-      "name": "Enamel Sign",
+      "name": "Verdict JA!",
       "kind": "custom",
-      "refersTo": "enamel-sign",
-      "description": "The question plate on the tower: enamel, inset blue rule, four screws, plate shadow, EIER? in safety red.",
-      "html": "<div class=\"ds-tower\"><h1 class=\"ds-schild\">Hast du <em>Eier?</em></h1></div>",
-      "css": ".ds-tower { padding:24px; background:var(--tower,#0a5fa8); } .ds-schild { margin:0; padding:18px 22px 14px; border-radius:10px; background-color:var(--enamel,#fdfefe); background-image:radial-gradient(circle at 12px 12px, var(--grout,#d3e8ee) 3px, rgba(6,42,77,.35) 3.5px, transparent 4.5px), radial-gradient(circle at calc(100% - 12px) 12px, var(--grout,#d3e8ee) 3px, rgba(6,42,77,.35) 3.5px, transparent 4.5px), radial-gradient(circle at 12px calc(100% - 12px), var(--grout,#d3e8ee) 3px, rgba(6,42,77,.35) 3.5px, transparent 4.5px), radial-gradient(circle at calc(100% - 12px) calc(100% - 12px), var(--grout,#d3e8ee) 3px, rgba(6,42,77,.35) 3.5px, transparent 4.5px); box-shadow:inset 0 0 0 5px var(--enamel,#fdfefe), inset 0 0 0 8px var(--tower,#0a5fa8), 0 10px 18px -10px rgba(2,24,48,.55), 0 2px 3px rgba(2,24,48,.2); color:var(--ink,#062a4d); font-family:'Barlow Condensed','Arial Narrow',sans-serif; font-size:4.5rem; font-weight:900; line-height:.88; letter-spacing:-.005em; text-align:center; text-transform:uppercase; text-wrap:balance; } .ds-schild em { font-style:normal; color:var(--red,#e2231a); }"
+      "refersTo": "verdict",
+      "description": "Signature: the answer word at weight 900, fitted to its container, red '!'. Inflates from 100 on landing.",
+      "html": "<div class=\"ds-verdict-wrap\"><h2 class=\"ds-verdict ds-verdict-ja\" style=\"--len:3\"><span>Ja</span><span class=\"ds-bang\">!</span></h2></div>",
+      "css": "@property --lsb { syntax: '<number>'; inherits: false; initial-value: 0; } .ds-verdict-wrap { container-type: inline-size; } .ds-verdict { --fit: .435; --cap: 42svh; --lsb: .016; margin: 0; margin-inline-start: calc(var(--lsb) * -1em); font-family: var(--font, 'Hanken Grotesk', 'Helvetica Neue', Helvetica, Arial, sans-serif); font-size: min(calc(100cqi / (var(--len) * var(--fit))), var(--cap)); font-weight: 900; line-height: .86; letter-spacing: -.04em; white-space: nowrap; color: var(--ink, #0a0a0a); } .ds-bang { color: var(--red, #e30613); } .ds-verdict-ja { animation: ds-inflate 700ms cubic-bezier(.16,1,.3,1) both; } @keyframes ds-inflate { from { font-weight: 100; --lsb: .042; } to { font-weight: 900; --lsb: .016; } } @media (prefers-reduced-motion: reduce) { .ds-verdict { animation: none; } }"
     },
     {
-      "name": "Friend Sign",
+      "name": "Verdict NEIN!",
       "kind": "custom",
-      "refersTo": "friend-sign",
-      "description": "Sun-yellow enamel plate shown only to visitors arriving from a shared link.",
-      "html": "<div class=\"ds-tower\"><p class=\"ds-kumpel\">Dein Kumpel stand schon oben.</p></div>",
-      "css": ".ds-tower { padding:24px; background:var(--tower,#0a5fa8); } .ds-kumpel { margin:0; padding:12px 22px 11px; border-radius:10px; background-color:var(--sun,#ffd400); background-image:radial-gradient(circle at 12px 12px, var(--grout,#d3e8ee) 3px, rgba(6,42,77,.35) 3.5px, transparent 4.5px), radial-gradient(circle at calc(100% - 12px) 12px, var(--grout,#d3e8ee) 3px, rgba(6,42,77,.35) 3.5px, transparent 4.5px), radial-gradient(circle at 12px calc(100% - 12px), var(--grout,#d3e8ee) 3px, rgba(6,42,77,.35) 3.5px, transparent 4.5px), radial-gradient(circle at calc(100% - 12px) calc(100% - 12px), var(--grout,#d3e8ee) 3px, rgba(6,42,77,.35) 3.5px, transparent 4.5px); box-shadow:inset 0 0 0 5px var(--sun,#ffd400), inset 0 0 0 7px var(--ink,#062a4d), 0 10px 18px -10px rgba(2,24,48,.55), 0 2px 3px rgba(2,24,48,.2); color:var(--ink,#062a4d); font-family:'Barlow','Helvetica Neue',Arial,sans-serif; font-size:1.375rem; font-weight:700; line-height:1.2; text-align:center; }"
+      "refersTo": "verdict",
+      "description": "Signature: the answer word deflated to weight 100 over 1100ms.",
+      "html": "<div class=\"ds-verdict-wrap\"><h2 class=\"ds-verdict ds-verdict-nein\" style=\"--len:5\"><span>Nein</span><span class=\"ds-bang\">!</span></h2></div>",
+      "css": "@property --lsb { syntax: '<number>'; inherits: false; initial-value: 0; } .ds-verdict-wrap { container-type: inline-size; } .ds-verdict { --fit: .435; --cap: 42svh; margin: 0; margin-inline-start: calc(var(--lsb) * -1em); font-family: var(--font, 'Hanken Grotesk', 'Helvetica Neue', Helvetica, Arial, sans-serif); font-size: min(calc(100cqi / (var(--len) * var(--fit))), var(--cap)); line-height: .86; letter-spacing: -.04em; white-space: nowrap; color: var(--ink, #0a0a0a); } .ds-bang { color: var(--red, #e30613); } .ds-verdict-nein { --lsb: .097; font-weight: 100; animation: ds-deflate 1100ms cubic-bezier(.16,1,.3,1) both; } @keyframes ds-deflate { from { font-weight: 900; --lsb: .059; } to { font-weight: 100; --lsb: .097; } } @media (prefers-reduced-motion: reduce) { .ds-verdict { animation: none; } }"
     },
     {
-      "name": "Verdict in the Pool",
+      "name": "Suspense Teaser",
       "kind": "custom",
-      "refersTo": "pool-turquoise",
-      "description": "Turquoise water with the lane stripe; the verdict in Condensed Black fills it wall to wall.",
-      "html": "<div class=\"ds-wasser\"><h2 class=\"ds-urteil\">Ja!</h2></div>",
-      "css": ".ds-wasser { display:grid; place-items:center; min-height:280px; padding:32px 16px; container-type:inline-size; background-color:var(--water,#0b93a3); background-image:linear-gradient(90deg, transparent calc(50% - 22px), var(--water-lane,#087a88) calc(50% - 22px), var(--water-lane,#087a88) calc(50% + 22px), transparent calc(50% + 22px)); color:#fff; } .ds-urteil { --len:3; --fit:.42; margin:0; font-family:'Barlow Condensed','Arial Narrow',sans-serif; font-weight:900; text-transform:uppercase; font-size:min(calc(100cqi / (var(--len) * var(--fit))), 240px); line-height:.8; letter-spacing:-.01em; text-shadow:0 .03em .12em rgba(4,50,60,.45); }"
+      "refersTo": "verdict-teaser",
+      "description": "'Ja? Nein?' on two lines at weight 100, breathing once to 320.",
+      "html": "<div class=\"ds-verdict-wrap\"><h2 class=\"ds-teaser\">Ja?\nNein?</h2></div>",
+      "css": "@property --lsb { syntax: '<number>'; inherits: false; initial-value: 0; } .ds-verdict-wrap { container-type: inline-size; } .ds-teaser { --lsb: .042; margin: 0; margin-inline-start: calc(var(--lsb) * -1em); font-family: var(--font, 'Hanken Grotesk', 'Helvetica Neue', Helvetica, Arial, sans-serif); font-size: min(calc(100cqi / (5 * .44)), 42svh); font-weight: 100; line-height: .86; letter-spacing: -.04em; white-space: pre-line; color: var(--ink, #0a0a0a); animation: ds-breathe 1400ms ease-in-out; } @keyframes ds-breathe { 50% { font-weight: 320; } } @media (prefers-reduced-motion: reduce) { .ds-teaser { animation: none; } }"
     },
     {
-      "name": "Info Sign",
-      "kind": "custom",
-      "refersTo": "info-sign",
-      "description": "Square blue DIN-style sign with white rule and stroke pictogram (here: the jump).",
-      "html": "<div class=\"ds-pikto\"><svg viewBox=\"0 0 100 100\" aria-hidden=\"true\"><circle cx=\"50\" cy=\"53\" r=\"8\"/><path d=\"M50 63v20M43 70l7 13 7-13M52 44l6-22M58 22l-6-16M58 22l9-14M18 92q8-6 16 0t16 0 16 0 16 0\"/></svg></div>",
-      "css": ".ds-pikto { width:88px; aspect-ratio:1; padding:9px; border-radius:8px; background:var(--tower,#0a5fa8); box-shadow:inset 0 0 0 3px #fff, inset 0 0 0 5px var(--tower,#0a5fa8), 0 10px 18px -10px rgba(2,24,48,.55), 0 2px 3px rgba(2,24,48,.2); } .ds-pikto svg { display:block; width:100%; height:100%; fill:none; stroke:#fff; stroke-width:6; stroke-linecap:round; stroke-linejoin:round; } .ds-pikto circle { fill:#fff; stroke:none; }"
+      "name": "Answer Text",
+      "kind": "card",
+      "refersTo": "title",
+      "description": "Hairline-topped block: dek (title) and optional lede.",
+      "html": "<div class=\"ds-text\"><p class=\"ds-dek\">Nein.&nbsp;😔</p><p class=\"ds-lede\">Schade! Denn: Eier! Wir brauchen Eier!</p></div>",
+      "css": ".ds-text { display: grid; gap: 8px; padding-top: 16px; border-top: 1px solid var(--rule, #0a0a0a); font-family: var(--font, 'Hanken Grotesk', 'Helvetica Neue', Helvetica, Arial, sans-serif); color: var(--ink, #0a0a0a); } .ds-dek { margin: 0; font-size: clamp(1.5rem, 6.4vw, 2rem); font-weight: 650; line-height: 1.15; letter-spacing: -.025em; text-wrap: balance; } .ds-lede { max-width: 36ch; margin: 0; font-size: 1.1875rem; line-height: 1.45; }"
     },
     {
       "name": "Clip with Play Badge",
-      "kind": "card",
-      "refersTo": "clip-frame",
-      "description": "Navy-framed third-party clip; YouTube loads only after the play badge is clicked.",
-      "html": "<figure class=\"ds-clip\"><div class=\"ds-clip__media\"><button class=\"ds-play\" type=\"button\"><span class=\"ds-play__badge\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M7 4l13 8-13 8z\"/></svg>Video mit Ton</span></button></div><figcaption class=\"ds-clip__caption\">Oliver Kahn: „Eier, wir brauchen Eier!“ Video: YouTube</figcaption></figure>",
-      "css": ".ds-clip { margin:0; max-width:420px; } .ds-clip__media { position:relative; aspect-ratio:16/9; overflow:hidden; border-radius:10px; background:var(--ink,#062a4d); box-shadow:0 10px 18px -10px rgba(2,24,48,.55), 0 2px 3px rgba(2,24,48,.2); } .ds-play { all:unset; position:absolute; inset:0; cursor:pointer; } .ds-play__badge { position:absolute; left:12px; bottom:12px; display:inline-flex; align-items:center; gap:10px; padding:10px 16px 10px 12px; border-radius:8px; background:var(--tower,#0a5fa8); box-shadow:inset 0 0 0 2px #fff, inset 0 0 0 4px var(--tower,#0a5fa8); color:#fff; font-family:'Barlow','Helvetica Neue',Arial,sans-serif; font-size:1rem; font-weight:700; letter-spacing:.04em; text-transform:uppercase; transition:background-color 160ms cubic-bezier(.16,1,.3,1), box-shadow 160ms cubic-bezier(.16,1,.3,1); } .ds-play__badge svg { width:20px; height:20px; fill:currentColor; } .ds-play:hover .ds-play__badge { background:var(--tower-deep,#074a85); box-shadow:inset 0 0 0 2px #fff, inset 0 0 0 4px var(--tower-deep,#074a85); } .ds-play:focus-visible .ds-play__badge { outline:3px solid var(--sun,#ffd400); outline-offset:2px; } .ds-clip__caption { margin-top:8px; font-family:'Barlow Semi Condensed','Barlow','Helvetica Neue',Arial,sans-serif; font-size:.875rem; font-weight:600; line-height:1.35; color:var(--ink-soft,#2f5878); }"
+      "kind": "custom",
+      "refersTo": "play-badge",
+      "description": "16:9 click-to-load video poster with a square white badge flush bottom-left; caption beneath.",
+      "html": "<figure class=\"ds-clip\"><button class=\"ds-play\" type=\"button\" aria-label=\"Video abspielen, mit Ton\"><span class=\"ds-badge\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M7 4.5v15l13-7.5z\"/></svg>Video mit Ton</span></button><figcaption class=\"ds-caption\">Oliver Kahn: „Eier, wir brauchen Eier!“ Video: YouTube</figcaption></figure>",
+      "css": ".ds-clip { margin: 0; font-family: var(--font, 'Hanken Grotesk', 'Helvetica Neue', Helvetica, Arial, sans-serif); } .ds-play { all: unset; position: relative; display: block; width: 100%; aspect-ratio: 16 / 9; background: var(--ink, #0a0a0a); cursor: pointer; } .ds-badge { position: absolute; left: 0; bottom: 0; display: inline-flex; align-items: center; gap: 10px; padding: 12px 18px 12px 14px; background: var(--white, #fff); color: var(--ink, #0a0a0a); font-size: .9375rem; font-weight: 600; letter-spacing: -.01em; transition: background-color 160ms cubic-bezier(.16,1,.3,1), color 160ms cubic-bezier(.16,1,.3,1); } .ds-badge svg { width: 16px; height: 16px; fill: currentColor; } .ds-play:hover .ds-badge { background: var(--ink, #0a0a0a); color: var(--white, #fff); } .ds-play:focus-visible .ds-badge { outline: 2px solid var(--ink, #0a0a0a); outline-offset: 2px; } .ds-caption { margin-top: 8px; color: var(--ink-soft, #5c5c5c); font-size: .8125rem; line-height: 1.4; }"
     },
     {
-      "name": "Pool Edge with Overflow Grate",
-      "kind": "custom",
-      "refersTo": "tile-white",
-      "description": "Overflow channel (navy grate, blue edge tiles) above the white-tiled deck that carries the dek and toast.",
-      "html": "<div class=\"ds-rand\"><p class=\"ds-dek\">Ja, riesen Kawenzmänner! 😎</p><p class=\"ds-toast\">Link kopiert</p></div>",
-      "css": ".ds-rand { position:relative; display:flex; flex-direction:column; gap:18px; padding:50px 16px 28px; background:var(--tile,#f7fbfc); color:var(--ink,#062a4d); } .ds-rand::before { content:''; position:absolute; inset:0 0 auto; height:30px; background:repeating-linear-gradient(90deg, var(--ink,#062a4d) 0 5px, transparent 5px 11px) 0 0 / 100% 12px no-repeat, repeating-linear-gradient(90deg, var(--tower,#0a5fa8) 0 34px, var(--tile,#f7fbfc) 34px 36px) 0 12px / 100% 18px no-repeat; background-color:#0b3a63; } .ds-dek { margin:0; font-family:'Barlow','Helvetica Neue',Arial,sans-serif; font-size:2rem; font-weight:700; line-height:1.08; letter-spacing:-.01em; } .ds-toast { align-self:flex-start; margin:0; padding:6px 10px 5px; border-radius:6px; background:var(--sun,#ffd400); color:var(--ink,#062a4d); font-family:'Barlow Semi Condensed','Barlow','Helvetica Neue',Arial,sans-serif; font-size:.9375rem; font-weight:600; letter-spacing:.05em; text-transform:uppercase; }"
+      "name": "Header",
+      "kind": "nav",
+      "refersTo": "headline",
+      "description": "Question left, tagline right on a shared baseline, closed by a hairline; under a 6px red top rule.",
+      "html": "<div class=\"ds-top\"><header class=\"ds-kopf\"><h1 class=\"ds-frage\">Hast du Eier?</h1><p class=\"ds-notiz\">Eier, wir brauchen Eier.</p></header></div>",
+      "css": ".ds-top { border-top: 6px solid var(--red, #e30613); background: var(--white, #fff); padding: 0 20px; font-family: var(--font, 'Hanken Grotesk', 'Helvetica Neue', Helvetica, Arial, sans-serif); } .ds-kopf { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 4px 24px; padding: 18px 0 16px; border-bottom: 1px solid var(--rule, #0a0a0a); } .ds-frage { margin: 0; color: var(--ink, #0a0a0a); font-size: clamp(1.5rem, 2.4vw, 2.25rem); font-weight: 700; line-height: 1.1; letter-spacing: -.03em; } .ds-notiz { margin: 0; color: var(--ink-soft, #5c5c5c); font-size: .9375rem; line-height: 1.4; }"
     }
   ],
   "narrative": {
-    "northStar": "Der Zehner",
-    "overview": "The page is the 10-metre diving tower at a German Freibad on a sunny day, the Mutprobe every kid knows. The deep tile-blue tower holds the question on a screwed-on enamel sign; the turquoise pool below holds the countdown and then the verdict; the white-tiled pool edge holds the punchline, the clip and the two buttons. Every surface is a physical fitting of that place: painted concrete, tiles and grout, enamel plates, DIN-style blue info signs, the overflow grate and the ladder.\n\nDensity is low and the type is enormous. The verdict fills the water from wall to wall in Barlow Condensed Black, and everything else is set in the Barlow family, a DIN-like signage grotesk, so the page reads like the signs on the tower. Motion follows the physics of the place: gravity in, ripples out, stepped descents. JA! falls into the water, splash rings spread and the letters wobble under the surface until it settles. NEIN! climbs down rung by rung and the water stays still.\n\nTexture is drawn, never photographed: SVG noise for the painted tower, a displaced grout grid for the pool floor, drifting caustic light, slightly uneven deck tiles. The only photographic material is the third-party clip, shown clean in its frame. Literal eggs are out: \"Eier haben\" means nerve, and the world expresses nerve as the jump.",
+    "northStar": "The Weight of the Word",
+    "overview": "The category standard for a one-question oracle site, played straight to a Swiss poster and Apple product page bar: a small question, one enormous word, the clip, two actions. The only idea is typographic. The verdict is set on Hanken Grotesk's variable weight axis, so JA! lands at the heaviest weight (900) and NEIN! at the thinnest (100): the word itself either has Eier or has none. Everything else on the page stays out of its way.\n\nThe page is white paper with black ink, hairline rules and a single Swiss red. Density is low and the hierarchy is extreme: the verdict is sized to fill the measure, everything beneath it is set at reading sizes in the same family. No props, no costume, no decoration; depth, texture and gradient are absent by design.\n\nMotion is a single event per state. The thin teaser \"Ja? Nein?\" breathes once while the answer is drawn, then the verdict morphs its weight to the final value. Nothing else enters, slides or fades.",
     "keyCharacteristics": [
-      "Two zones, tower and pool: tower blue above (phone) or left (desktop), turquoise water and white tile below or right.",
-      "Enamel sign plates with 10px corners, inset rules, four screw heads and a soft navy depth shadow.",
-      "Barlow Condensed Black for the verdict, question, tower height and countdown; Barlow Medium/Bold for reading text; Barlow Semi Condensed SemiBold for small uppercase signage.",
-      "Safety red appears only on the word EIER?. Sun yellow is reserved for the friend sign, the toast, focus and selection.",
-      "Motion is gravity, ripples and ladder steps, with an instant state under reduced motion and the countdown kept."
+      "One face (Hanken Grotesk variable, 100-900); hierarchy by size and weight only.",
+      "White, black ink, and one red used in exactly two places.",
+      "Verdict fitted to its container width, capped by viewport height.",
+      "Weight morph as the signature and only entrance motion.",
+      "Square corners, 1px hairline rules, no shadows.",
+      "12-column desktop grid; single column on phones with 20px margins."
     ],
     "rules": [
       {
-        "name": "The Safety Red Rule",
-        "body": "Red marks danger, so it marks only EIER? (and future alerts). It never fills a surface or a button.",
+        "name": "The Two Reds Rule",
+        "body": "Red appears exactly twice on any screen: the 6px top rule and the \"!\" of the verdict. The teaser (\"Ja? Nein?\") carries no red. A third red element breaks the system.",
         "section": "colors"
       },
       {
-        "name": "The Deep Water Rule",
-        "body": "White text goes on the pool only at display size. Body, captions and buttons live on the tiled edge or the tower.",
+        "name": "The Hover Inverts Rule",
+        "body": "Interactive states trade ink and white; they never introduce a new hue. The one tonal step is the primary button hover (`#2b2b2b`).",
         "section": "colors"
       },
       {
-        "name": "The Signboard Rule",
-        "body": "Anything shouted is Barlow Condensed Black in uppercase; anything read is Barlow in sentence case. No second family.",
+        "name": "The Weight Is the Verdict Rule",
+        "body": "Yes is weight 900, no is weight 100, suspense is 100. Never set the verdict at a middle weight at rest, and never signal yes/no with color.",
         "section": "typography"
       },
       {
-        "name": "The Hanging Plate Rule",
-        "body": "Only screwed-on signs and the clip frame cast shadows, always the plate shadow, always downward. Buttons, tiles and text stay flat.",
+        "name": "The Fit, Not Clamp Rule",
+        "body": "The verdict is sized from its container width and its character count, never from a fixed clamp. A new verdict word must set `--len` and, if its weight changes, a re-measured `--fit`.",
+        "section": "typography"
+      },
+      {
+        "name": "The Optical Edge Rule",
+        "body": "On phones the verdict hangs flush-left with its first stem on the margin at every weight. The left side-bearing of the first glyph is a registered custom property (`--lsb`, number, em) animated alongside the weight: J measures 0.042em at 100 and 0.016em at 900; N measures 0.097em at 100 and 0.059em at 900. The verdict's inline-start margin is `-lsb × 1em × trim`, with trim 1 on phones and 0 on desktop, where the word is centred and needs no correction.",
+        "section": "typography"
+      },
+      {
+        "name": "The Answer First Rule",
+        "body": "While the answer is being drawn, text, clip and actions keep their space (`visibility: hidden`) so nothing shifts when the verdict lands.",
+        "section": "layout"
+      },
+      {
+        "name": "The Paper Rule",
+        "body": "If an element needs to stand apart, give it a hairline or white space, not a shadow or a tint.",
         "section": "elevation"
       }
     ],
     "dos": [
-      "Do build every new surface from fittings of the Freibad: tower blue (#0a5fa8) paint, turquoise water (#0b93a3), white tile with grout, enamel plates, blue info signs, grate and ladder.",
-      "Do put question-level statements on enamel plates with 10px corners, an inset rule, four screw heads and the plate shadow.",
-      "Do size the verdict from its character count so it fills the pool wall to wall in Barlow Condensed Black, uppercase, line height 0.8.",
-      "Do keep motion physical: gravity in (ease-in fall), ripples out (expanding, thinning rings), stepped descents (`steps(4)`), each with an instant reduced-motion state.",
-      "Do use inline SVG for icons and pictograms, stroked in white or currentColor with round caps.",
-      "Do keep the third-party clip clean in its navy frame and load YouTube from youtube-nocookie only after a click."
+      "**Do** keep red to the 6px top rule and the verdict's \"!\".",
+      "**Do** express yes and no through weight alone: 900 for JA!, 100 for NEIN!, 100 for the teaser.",
+      "**Do** size the verdict with the fit formula and set `--len` per word; re-measure `--fit` for any new weight or word shape.",
+      "**Do** animate `--lsb` with the weight so a flush-left verdict keeps its first stem on the margin at every weight.",
+      "**Do** let the weight morph be the only entrance motion; everything else simply stands there once the answer lands.",
+      "**Do** jump to the final weight under `prefers-reduced-motion`.",
+      "**Do** separate blocks with 1px hairlines and white space on the 12-column grid.",
+      "**Do** keep all corners square and all states inside the ink/white pair."
     ],
     "donts": [
-      "Don't use egg imagery of any kind; \"Eier\" means nerve, and the jump is the image for it.",
-      "Don't use safety red (#e2231a) for anything but EIER? and alerts, and don't use sun yellow (#ffd400) as a text colour.",
-      "Don't set body, captions or buttons in white on the turquoise water; it is 3.67:1 and holds display type only.",
-      "Don't use gradients, glows or glass as decoration. Gradients may only draw real fittings (lane line, grate, edge tiles, ladder, screws).",
-      "Don't introduce a second type family; width and weight within Barlow carry the hierarchy.",
-      "Don't put filters, tints or overlays on the clips."
+      "**Don't** add a second typeface; Hanken Grotesk carries every role.",
+      "**Don't** use shadows, gradients, textures or rounded corners.",
+      "**Don't** color the verdict or any state green, red or otherwise to mean yes/no.",
+      "**Don't** fade, slide or stagger in the text, clip or buttons.",
+      "**Don't** add props, illustrations or literal eggs; the type is the whole idea.",
+      "**Don't** set the verdict with a fixed clamp or let it wrap (the teaser's two-line break is the only exception)."
     ]
   }
 }

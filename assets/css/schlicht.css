@@ -1,0 +1,444 @@
+/* Hast du Eier? — schlicht */
+
+/* Hanken Grotesk (SIL OFL), variable Strichstärke 100–900, auf Latin-1 plus deutsche Satzzeichen beschnitten. */
+@font-face {
+    font-family: "Hanken Grotesk";
+    src: url("../fonts/hanken-var.woff2") format("woff2-variations");
+    font-weight: 100 900;
+    font-display: swap;
+}
+
+/* Linker Fleisch des ersten Buchstabens, wandert mit der Strichstärke */
+@property --lsb {
+    syntax: "<number>";
+    inherits: false;
+    initial-value: 0;
+}
+
+:root {
+    --white: #ffffff;
+    --ink: #0a0a0a;
+    --ink-soft: #5c5c5c;
+    --rule: #0a0a0a;
+    --red: #e30613;
+
+    --font: "Hanken Grotesk", "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+    --margin: 20px;
+    --column-gap: 20px;
+    --ease-out: cubic-bezier(.16, 1, .3, 1);
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+    background: var(--white);
+    scrollbar-color: var(--ink) var(--white);
+}
+
+body {
+    margin: 0;
+    min-height: 100svh;
+    border-top: 6px solid var(--red);
+    background: var(--white);
+    color: var(--ink);
+    font-family: var(--font);
+    font-size: 1.0625rem;
+    font-weight: 400;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+    background: var(--ink);
+    color: var(--white);
+}
+
+:focus-visible {
+    outline: 2px solid var(--ink);
+    outline-offset: 3px;
+}
+
+.page {
+    display: flex;
+    flex-direction: column;
+    max-width: 1440px;
+    min-height: calc(100svh - 6px);
+    margin: 0 auto;
+    padding: 0 var(--margin);
+}
+
+/* ───────── Kopf ───────── */
+
+.kopf {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 4px 24px;
+    padding: 18px 0 16px;
+    border-bottom: 1px solid var(--rule);
+}
+
+.frage {
+    margin: 0;
+    font-size: clamp(1.5rem, 2.4vw, 2.25rem);
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -.03em;
+}
+
+.notiz {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 16px;
+    margin: 0;
+    color: var(--ink-soft);
+    font-size: .9375rem;
+    line-height: 1.4;
+}
+
+.notiz__kumpel {
+    color: var(--ink);
+    font-weight: 600;
+}
+
+.notiz__kumpel[hidden] {
+    display: none;
+}
+
+/* ───────── Antwort ───────── */
+
+.antwort {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding: 20px 0 40px;
+    container-type: inline-size;
+}
+
+.urteil {
+    --len: 3;
+    /* Breite pro Zeichen bei voller Strichstärke (gemessen: .427) */
+    --fit: .435;
+    --cap: 42svh;
+    /* Erster Buchstabe hängt genau auf dem Rand: J bei 900 hat .016em Fleisch */
+    --lsb: .016;
+    --trim: 1;
+    margin: 0;
+    margin-inline-start: calc(var(--lsb) * -1em * var(--trim));
+    font-size: min(calc(100cqi / (var(--len) * var(--fit))), var(--cap));
+    font-weight: 900;
+    line-height: .86;
+    letter-spacing: -.04em;
+    white-space: nowrap;
+}
+
+.urteil__bang {
+    color: var(--red);
+}
+
+/* Spannung: „Ja? Nein?“ ganz dünn in zwei Zeilen, atmet einmal */
+.antwort[data-stage="waiting"] .urteil {
+    /* dünn gemessen .414, beim Atmen etwas breiter */
+    --fit: .44;
+    --lsb: .042;
+    font-weight: 100;
+    white-space: pre-line;
+    animation: atmen 1400ms ease-in-out;
+}
+
+@keyframes atmen {
+    50% { font-weight: 320; }
+}
+
+/* Ja! bekommt Gewicht, Nein! verliert es */
+.antwort[data-found="true"] .urteil {
+    animation: aufpumpen 700ms var(--ease-out) both;
+}
+
+/* Nein endet dünn; das N hat dann .097em Fleisch */
+.antwort[data-found="false"] .urteil {
+    --lsb: .097;
+    font-weight: 100;
+    animation: luft-raus 1100ms var(--ease-out) both;
+}
+
+@keyframes aufpumpen {
+    from { font-weight: 100; --lsb: .042; }
+    to { font-weight: 900; --lsb: .016; }
+}
+
+@keyframes luft-raus {
+    from { font-weight: 900; --lsb: .059; }
+    to { font-weight: 100; --lsb: .097; }
+}
+
+/* Nur das Wort bewegt sich; der Rest steht einfach da, sobald die Antwort steht */
+.antwort[data-stage="waiting"] :is(.text, .clip, .actions) {
+    visibility: hidden;
+}
+
+.text {
+    display: grid;
+    gap: 8px;
+    padding-top: 16px;
+    border-top: 1px solid var(--rule);
+}
+
+.dek {
+    margin: 0;
+    font-size: clamp(1.5rem, 6.4vw, 2rem);
+    font-weight: 650;
+    line-height: 1.15;
+    letter-spacing: -.025em;
+    text-wrap: balance;
+}
+
+.lede {
+    max-width: 36ch;
+    margin: 0;
+    font-size: 1.1875rem;
+    line-height: 1.45;
+}
+
+/* ───────── Clip ───────── */
+
+.clip {
+    margin: 0;
+}
+
+.clip__media {
+    position: relative;
+    aspect-ratio: 16 / 10;
+    overflow: hidden;
+    background: var(--ink);
+}
+
+.clip__media--yt {
+    aspect-ratio: 16 / 9;
+}
+
+.clip__media video,
+.clip__media img,
+.clip__media iframe {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    object-fit: cover;
+}
+
+.clip__caption {
+    margin-top: 8px;
+    color: var(--ink-soft);
+    font-size: .8125rem;
+    line-height: 1.4;
+}
+
+.play {
+    all: unset;
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    cursor: pointer;
+}
+
+.play img {
+    position: absolute;
+    inset: 0;
+}
+
+.play__badge {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 18px 12px 14px;
+    background: var(--white);
+    color: var(--ink);
+    font-size: .9375rem;
+    font-weight: 600;
+    letter-spacing: -.01em;
+    transition: background-color 160ms var(--ease-out), color 160ms var(--ease-out);
+}
+
+.play__badge svg {
+    width: 16px;
+    height: 16px;
+    fill: currentColor;
+}
+
+.play:hover .play__badge {
+    background: var(--ink);
+    color: var(--white);
+}
+
+.play:focus-visible .play__badge {
+    outline: 2px solid var(--ink);
+    outline-offset: 2px;
+}
+
+/* ───────── Knöpfe ───────── */
+
+.actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: .6em;
+    flex: 1 1 160px;
+    min-height: 56px;
+    padding: .8em 1.4em;
+    border: 1.5px solid var(--ink);
+    border-radius: 0;
+    font: inherit;
+    font-size: 1.0625rem;
+    font-weight: 600;
+    letter-spacing: -.01em;
+    cursor: pointer;
+    transition: background-color 140ms var(--ease-out), color 140ms var(--ease-out);
+    -webkit-tap-highlight-color: transparent;
+}
+
+.btn__icon {
+    width: 1.1em;
+    height: 1.1em;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: square;
+    stroke-linejoin: miter;
+}
+
+.btn--primary {
+    background: var(--ink);
+    color: var(--white);
+}
+
+.btn--primary:hover {
+    background: #2b2b2b;
+}
+
+.btn--secondary {
+    background: var(--white);
+    color: var(--ink);
+}
+
+.btn--secondary:hover {
+    background: var(--ink);
+    color: var(--white);
+}
+
+.btn:active {
+    translate: 0 1px;
+}
+
+.btn:disabled {
+    opacity: .4;
+    cursor: progress;
+}
+
+.toast {
+    flex-basis: 100%;
+    min-height: 1.5em;
+    margin: 0;
+    font-size: .9375rem;
+    font-weight: 600;
+    overflow-wrap: anywhere;
+}
+
+.noscript {
+    margin: 0;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: -.03em;
+}
+
+/* ───────── Fuß ───────── */
+
+.fuss {
+    padding: 14px 0 24px;
+    border-top: 1px solid var(--rule);
+    color: var(--ink-soft);
+    font-size: .8125rem;
+}
+
+/* ───────── Großes Format: Raster mit zwölf Spalten ───────── */
+
+@media (min-width: 900px) {
+    :root {
+        --margin: 48px;
+        --column-gap: 24px;
+    }
+
+    .kopf {
+        padding: 28px 0 20px;
+    }
+
+    .antwort {
+        display: grid;
+        grid-template-columns: repeat(12, minmax(0, 1fr));
+        grid-template-areas:
+            "urteil urteil urteil urteil urteil urteil urteil urteil urteil urteil urteil urteil"
+            "text text text text actions actions actions actions clip clip clip clip";
+        grid-template-rows: auto 1fr;
+        column-gap: var(--column-gap);
+        row-gap: 28px;
+        padding: 24px 0 48px;
+        align-items: start;
+    }
+
+    /* Das Wort steht mittig auf der Rasterachse; Zentrieren braucht keinen Randausgleich */
+    .urteil {
+        grid-area: urteil;
+        --cap: 50svh;
+        --trim: 0;
+        text-align: center;
+    }
+
+    /* Zwei Zeilen so hoch wie die Antwort, nie größer als sie */
+    .antwort[data-stage="waiting"] .urteil {
+        --cap: 25svh;
+    }
+
+    .text { grid-area: text; }
+    .clip { grid-area: clip; }
+
+    .actions {
+        grid-area: actions;
+        flex-direction: column;
+        padding-top: 16px;
+        border-top: 1px solid var(--rule);
+    }
+
+    .btn {
+        flex: 0 0 auto;
+    }
+
+    .dek {
+        font-size: clamp(1.625rem, 2.2vw, 2.125rem);
+    }
+}
+
+/* ───────── Weniger Bewegung ───────── */
+
+@media (prefers-reduced-motion: reduce) {
+    .antwort[data-stage] .urteil {
+        animation: none;
+    }
+}

@@ -2,27 +2,6 @@
   "detector": {
     "ignoreRules": [],
     "ignoreFiles": [],
-    "ignoreValues": [
-      {
-        "rule": "repeating-stripes-gradient",
-        "value": "*",
-        "files": [
-          "assets/css/zehner.css",
-          "index.html"
-        ],
-        "createdAt": "2026-10-08T19:10:42.950Z",
-        "reason": "Claude (build): the stripes draw physical pool fittings, the overflow grate, the blue edge tiles and the ladder rungs"
-      },
-      {
-        "rule": "dark-glow",
-        "value": "*",
-        "files": [
-          "assets/css/zehner.css",
-          "index.html"
-        ],
-        "createdAt": "2026-10-08T19:10:43.017Z",
-        "reason": "Claude (build): the navy shadow under enamel signs has a 10px offset and soft blur, a depth shadow on the blue tower, not a zero-offset glow"
-      }
-    ]
+    "ignoreValues": []
   }
 }

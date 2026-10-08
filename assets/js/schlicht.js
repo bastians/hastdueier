@@ -3,37 +3,29 @@ import { matomo } from './config.js';
 
 const $ = (selector, root = document) => root.querySelector(selector);
 
-const pool = $('.becken');
+const stage = $('.antwort');
 const verdict = $('.urteil');
-const counter = $('.zaehler');
-const friendSign = $('.kumpel');
+const friendNote = $('.notiz__kumpel');
 const dek = $('.dek');
 const lede = $('.lede');
 const media = $('.clip__media');
 const caption = $('.clip__caption');
-const attemptLine = $('.turm__versuch');
 const shareButton = $('[data-action="share"]');
 const againButton = $('[data-action="again"]');
 const againLabel = $('.btn__label', againButton);
 const toast = $('.toast');
-const rings = $('.platsch');
-const ripple = $('#unterwasser feDisplacementMap');
 
 const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 const params = new URLSearchParams(window.location.search);
 
-// Drei, zwei, eins: Das Zählen ist Spannung, keine Bewegung,
-// und bleibt deshalb auch bei reduzierter Bewegung.
-const COUNT = ['3', '2', '1'];
-const BEAT = 470;
-const FALL = 420;
-const CLIMB = 1000;
+// Die Spannung dauert, auch bei reduzierter Bewegung: Sie ist Pause, keine Bewegung.
+const SUSPENSE = 1400;
+const TEASER = 'Ja?\nNein?';
 
 const yesIndices = answers.flatMap((answer, i) => (answer.found ? [i] : []));
 const noIndices = answers.flatMap((answer, i) => (answer.found ? [] : [i]));
 
 let current = null;
-let attempt = 1;
 let busy = false;
 
 const wait = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
@@ -92,7 +84,7 @@ function youtube(item) {
     return button;
 }
 
-// Der Clip lädt schon, während gezählt wird, und ist da, wenn das Urteil landet.
+// Der Clip lädt schon während der Spannung und ist da, wenn die Antwort steht.
 function prepareMedia(answer) {
     const isVideo = answer.media.type === 'youtube';
     media.classList.toggle('clip__media--yt', isVideo);
@@ -104,77 +96,52 @@ function prepareMedia(answer) {
 
 /* ───────── Urteil ───────── */
 
+// Das Ausrufezeichen ist das einzige Rot auf der Seite.
+function setVerdict(text) {
+    const bang = text.endsWith('!');
+    const word = document.createElement('span');
+    word.textContent = bang ? text.slice(0, -1) : text;
+    verdict.replaceChildren(word);
+    if (bang) {
+        const mark = document.createElement('span');
+        mark.className = 'urteil__bang';
+        mark.textContent = '!';
+        verdict.append(mark);
+    }
+    verdict.style.setProperty('--len', text.length);
+}
+
 function typeset(answer) {
-    verdict.textContent = answer.headline;
-    verdict.style.setProperty('--len', answer.headline.length);
-    pool.dataset.found = String(answer.found);
+    setVerdict(answer.headline);
+    stage.dataset.found = String(answer.found);
 
     // Emoji nie allein in die letzte Zeile
-    dek.textContent = answer.title.replace(/ (\S+)$/, ' $1');
+    dek.textContent = answer.title.replace(/ (\S+)$/, '\u00a0$1');
     lede.textContent = answer.description;
     lede.hidden = !answer.description;
 
     toast.textContent = '';
 }
 
-async function countdown() {
-    for (const n of COUNT) {
-        counter.textContent = n;
-        counter.classList.remove('is-tick');
-        void counter.offsetWidth;
-        counter.classList.add('is-tick');
-        await wait(BEAT);
-    }
+function tease() {
+    delete stage.dataset.found;
+    stage.dataset.stage = 'waiting';
+    setVerdict(TEASER);
+    // Zwei Zeilen, so breit wie „Nein?“
+    verdict.style.setProperty('--len', 5);
 }
 
-// Unter Wasser wackeln die Buchstaben, bis sich die Oberfläche beruhigt.
-function wobble() {
-    const start = performance.now();
-    const duration = 1200;
-    verdict.style.filter = 'url(#unterwasser)';
-    rings.style.filter = 'url(#unterwasser)';
-
-    const frame = (now) => {
-        const t = Math.min((now - start) / duration, 1);
-        ripple.setAttribute('scale', (38 * (1 - t) ** 2).toFixed(2));
-        if (t < 1) {
-            requestAnimationFrame(frame);
-        } else {
-            verdict.style.filter = '';
-            rings.style.filter = '';
-        }
-    };
-    requestAnimationFrame(frame);
-}
-
-async function jump(index) {
+async function reveal(index) {
     const answer = answers[index];
     current = index;
 
-    pool.classList.remove('is-splash', 'is-settled');
-    delete pool.dataset.found;
-    pool.dataset.stage = 'waiting';
+    tease();
     prepareMedia(answer);
-    await countdown();
+    await wait(SUSPENSE);
 
     typeset(answer);
-    pool.dataset.stage = 'landed';
-    track('Sprung', answer.found ? 'Gesprungen' : 'Runtergeklettert', answer.title);
-
-    if (reducedMotion.matches) {
-        pool.classList.add('is-settled');
-        return;
-    }
-
-    if (answer.found) {
-        await wait(FALL);
-        pool.classList.add('is-splash');
-        wobble();
-        await wait(300);
-    } else {
-        await wait(CLIMB);
-    }
-    pool.classList.add('is-settled');
+    stage.dataset.stage = 'landed';
+    track('Antwort', answer.found ? 'Ja' : 'Nein', answer.title);
 }
 
 async function again() {
@@ -183,26 +150,24 @@ async function again() {
     againButton.disabled = true;
     shareButton.disabled = true;
 
-    // Wer über einen geteilten Link kam, springt ab jetzt selbst.
-    if (!friendSign.hidden) {
-        friendSign.hidden = true;
+    // Wer über einen geteilten Link kam, fragt ab jetzt selbst.
+    if (!friendNote.hidden) {
+        friendNote.hidden = true;
         againLabel.textContent = 'Nochmal';
         setPrimary(shareButton);
         window.history.replaceState(null, '', window.location.pathname);
     }
 
-    attempt += 1;
-    attemptLine.textContent = attempt;
     window.scrollTo({ top: 0, behavior: reducedMotion.matches ? 'auto' : 'smooth' });
-    track('Sprung', 'Nochmal');
-    await jump(draw());
+    track('Antwort', 'Nochmal');
+    await reveal(draw());
 
     againButton.disabled = false;
     shareButton.disabled = false;
     busy = false;
 }
 
-// Hauptknopf ist „Teilen“, beim Sprung vom Kumpel aber „Und du?“.
+// Hauptknopf ist „Teilen“, bei der Antwort vom Kumpel aber „Und du?“.
 function setPrimary(button) {
     for (const b of [shareButton, againButton]) {
         b.classList.toggle('btn--primary', b === button);
@@ -267,21 +232,20 @@ function start() {
     shareButton.addEventListener('click', share);
     againButton.addEventListener('click', again);
 
-    // ?og hält das Zählen bei der 3 an: nur für das Vorschaubild.
+    // ?og hält die Spannung an: nur für das Vorschaubild.
     if (params.has('og')) {
-        pool.dataset.stage = 'waiting';
-        counter.textContent = COUNT[0];
+        tease();
         return;
     }
 
     const fromFriend = sharedIndex();
     if (fromFriend !== null) {
-        friendSign.hidden = false;
+        friendNote.hidden = false;
         againLabel.textContent = 'Und du?';
         setPrimary(againButton);
-        jump(fromFriend);
+        reveal(fromFriend);
     } else {
-        jump(draw());
+        reveal(draw());
     }
 }
 
