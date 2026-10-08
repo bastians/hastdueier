@@ -1,319 +1,317 @@
 ---
 name: Hast du Eier?
-description: Your verdict as tomorrow's tabloid front page of the EIER-ZEITUNG.
+description: The 10-metre tower at the Freibad. Your verdict either jumps into the pool or climbs back down.
 colors:
-  tabloid-red: "#d8000f"
-  tabloid-red-deep: "#a3000b"
-  press-black: "#111111"
-  newsprint: "#f4f6f5"
-  caption-ink: "#3b3833"
-  marker-yellow: "#ffe100"
+  tower-blue: "#0a5fa8"
+  tower-blue-deep: "#074a85"
+  pool-turquoise: "#0b93a3"
+  lane-turquoise: "#087a88"
+  tile-white: "#f7fbfc"
+  grout: "#d3e8ee"
+  enamel: "#fdfefe"
+  ink-navy: "#062a4d"
+  ink-soft: "#2f5878"
+  safety-red: "#e2231a"
+  sun-yellow: "#ffd400"
   white: "#ffffff"
+  overflow-channel: "#0b3a63"
 typography:
-  masthead:
-    fontFamily: "Archivo, Helvetica Neue, Arial, sans-serif"
-    fontSize: "clamp(2rem, 11.4vw, 5.5rem)"
-    fontWeight: 900
-    lineHeight: 0.86
-    letterSpacing: "-0.035em"
-    fontVariation: "'wdth' 100"
   display:
-    fontFamily: "Archivo, Helvetica Neue, Arial, sans-serif"
-    fontSize: "min(calc(var(--measure) / (var(--len) * var(--fit))), 64svh)"
+    fontFamily: "Barlow Condensed, Arial Narrow, sans-serif"
+    fontSize: "min(calc(100cqi / (var(--len) * var(--fit))), 40svh)"
     fontWeight: 900
     lineHeight: 0.8
+    letterSpacing: "-0.01em"
+  countdown:
+    fontFamily: "Barlow Condensed, Arial Narrow, sans-serif"
+    fontSize: "min(46cqi, 34svh)"
+    fontWeight: 900
+    lineHeight: 0.8
+  tower-height:
+    fontFamily: "Barlow Condensed, Arial Narrow, sans-serif"
+    fontSize: "clamp(4.5rem, 26vw, 8rem)"
+    fontWeight: 900
+    lineHeight: 0.78
     letterSpacing: "-0.02em"
-    fontVariation: "'wdth' 62"
   headline:
-    fontFamily: "Archivo, Helvetica Neue, Arial, sans-serif"
-    fontSize: "clamp(3.25rem, 17vw, 8.5rem)"
+    fontFamily: "Barlow Condensed, Arial Narrow, sans-serif"
+    fontSize: "clamp(3rem, 15.5vw, 6.5rem)"
     fontWeight: 900
-    lineHeight: 0.86
-    letterSpacing: "-0.01em"
-    fontVariation: "'wdth' 62"
+    lineHeight: 0.88
+    letterSpacing: "-0.005em"
   title:
-    fontFamily: "Archivo, Helvetica Neue, Arial, sans-serif"
-    fontSize: "clamp(1.625rem, 7.4vw, 2.75rem)"
-    fontWeight: 900
-    lineHeight: 1.02
+    fontFamily: "Barlow, Helvetica Neue, Arial, sans-serif"
+    fontSize: "clamp(1.625rem, 7vw, 2.5rem)"
+    fontWeight: 700
+    lineHeight: 1.08
     letterSpacing: "-0.01em"
-    fontVariation: "'wdth' 85"
-  ticker:
-    fontFamily: "Archivo, Helvetica Neue, Arial, sans-serif"
-    fontSize: "clamp(1.125rem, 4.6vw, 1.75rem)"
-    fontWeight: 800
-    letterSpacing: "0.02em"
-    fontVariation: "'wdth' 85"
+  lede:
+    fontFamily: "Barlow, Helvetica Neue, Arial, sans-serif"
+    fontSize: "clamp(1.1875rem, 4.6vw, 1.375rem)"
+    fontWeight: 500
+    lineHeight: 1.35
   body:
-    fontFamily: "Zeitung Serif, Georgia, serif"
-    fontSize: "clamp(1.1875rem, 4.6vw, 1.4375rem)"
+    fontFamily: "Barlow, Helvetica Neue, Arial, sans-serif"
+    fontSize: "1.0625rem"
+    fontWeight: 500
+    lineHeight: 1.45
+  button:
+    fontFamily: "Barlow, Helvetica Neue, Arial, sans-serif"
+    fontSize: "1.1875rem"
+    fontWeight: 700
+    letterSpacing: "0.05em"
+  label:
+    fontFamily: "Barlow Semi Condensed, Barlow, Helvetica Neue, Arial, sans-serif"
+    fontSize: "0.875rem"
     fontWeight: 600
     lineHeight: 1.35
-  caption:
-    fontFamily: "Zeitung Serif, Georgia, serif"
-    fontSize: "0.875rem"
-    fontWeight: 400
-    lineHeight: 1.35
-  label:
-    fontFamily: "Archivo, Helvetica Neue, Arial, sans-serif"
-    fontSize: "1.1875rem"
+    letterSpacing: "0.06em"
+  tower-height-wide:
+    fontFamily: "Barlow Condensed, Arial Narrow, sans-serif"
+    fontSize: "clamp(6rem, 10vw, 9.5rem)"
     fontWeight: 900
-    letterSpacing: "0.04em"
-    fontVariation: "'wdth' 85"
-  meta:
-    fontFamily: "Archivo, Helvetica Neue, Arial, sans-serif"
-    fontSize: "0.8125rem"
+    lineHeight: 0.78
+  headline-wide:
+    fontFamily: "Barlow Condensed, Arial Narrow, sans-serif"
+    fontSize: "clamp(3.5rem, 6vw, 6rem)"
+    fontWeight: 900
+    lineHeight: 0.88
+  title-wide:
+    fontFamily: "Barlow, Helvetica Neue, Arial, sans-serif"
+    fontSize: "clamp(2rem, 2.8vw, 2.75rem)"
+    fontWeight: 700
+    lineHeight: 1.08
+  friend-sign:
+    fontFamily: "Barlow, Helvetica Neue, Arial, sans-serif"
+    fontSize: "clamp(1.125rem, 4.8vw, 1.375rem)"
+    fontWeight: 700
+    lineHeight: 1.2
+  badge:
+    fontFamily: "Barlow, Helvetica Neue, Arial, sans-serif"
+    fontSize: "1rem"
     fontWeight: 700
     letterSpacing: "0.04em"
-    fontVariation: "'wdth' 100"
-  headline-wide:
-    fontFamily: "Archivo, Helvetica Neue, Arial, sans-serif"
-    fontSize: "clamp(5rem, 9vw, 8.5rem)"
-    fontWeight: 900
-    lineHeight: 0.86
-    letterSpacing: "-0.01em"
-    fontVariation: "'wdth' 62"
-  base:
-    fontFamily: "Archivo, Helvetica Neue, Arial, sans-serif"
-    fontSize: "1.0625rem"
-    fontWeight: 400
-    lineHeight: 1.45
-  badge:
-    fontFamily: "Archivo, Helvetica Neue, Arial, sans-serif"
-    fontSize: "1rem"
-    fontWeight: 900
-    letterSpacing: "0.04em"
-    fontVariation: "'wdth' 85"
   notice:
-    fontFamily: "Archivo, Helvetica Neue, Arial, sans-serif"
-    fontSize: "1.5rem"
+    fontFamily: "Barlow Semi Condensed, Barlow, Helvetica Neue, Arial, sans-serif"
+    fontSize: "0.9375rem"
+    fontWeight: 600
+    letterSpacing: "0.05em"
+  fine-print:
+    fontFamily: "Barlow Semi Condensed, Barlow, Helvetica Neue, Arial, sans-serif"
+    fontSize: "0.8125rem"
+    fontWeight: 600
+    letterSpacing: "0.06em"
+  noscript:
+    fontFamily: "Barlow Condensed, Arial Narrow, sans-serif"
+    fontSize: "2rem"
     fontWeight: 900
-    lineHeight: 1.1
-    fontVariation: "'wdth' 85"
+    lineHeight: 1
 rounded:
-  none: "0px"
+  plate: "10px"
+  info-sign: "8px"
+  tag: "6px"
 spacing:
+  pair: "10px"
+  stack: "18px"
   gutter: "16px"
   gutter-wide: "40px"
-  stack: "18px"
-  actions: "10px"
-  column-gap: "40px"
 components:
-  masthead:
-    backgroundColor: "{colors.tabloid-red}"
-    textColor: "{colors.white}"
-    typography: "{typography.masthead}"
-    rounded: "{rounded.none}"
-    padding: "14px 16px 10px"
-  ticker:
-    backgroundColor: "{colors.press-black}"
-    textColor: "{colors.white}"
-    typography: "{typography.ticker}"
-    padding: "12px 0"
-  headline-ja:
-    textColor: "{colors.tabloid-red}"
-    typography: "{typography.display}"
-  headline-nein:
-    backgroundColor: "{colors.press-black}"
-    textColor: "{colors.white}"
-    typography: "{typography.display}"
-    padding: ".08em 16px .02em"
-  question-marker:
-    backgroundColor: "{colors.marker-yellow}"
-    textColor: "{colors.press-black}"
-    padding: "0 .06em"
-  banderole:
-    backgroundColor: "{colors.marker-yellow}"
-    textColor: "{colors.press-black}"
-    rounded: "{rounded.none}"
-    padding: "8px 12px 7px"
   button-primary:
-    backgroundColor: "{colors.tabloid-red}"
+    backgroundColor: "{colors.tower-blue}"
     textColor: "{colors.white}"
-    typography: "{typography.label}"
-    rounded: "{rounded.none}"
-    padding: ".85em 1.3em"
+    typography: "{typography.button}"
+    rounded: "{rounded.plate}"
+    padding: "0.8em 1.3em"
     height: "58px"
   button-primary-hover:
-    backgroundColor: "{colors.tabloid-red-deep}"
+    backgroundColor: "{colors.tower-blue-deep}"
     textColor: "{colors.white}"
   button-secondary:
-    backgroundColor: "transparent"
-    textColor: "{colors.press-black}"
-    typography: "{typography.label}"
-    rounded: "{rounded.none}"
-    padding: ".85em 1.3em"
+    backgroundColor: "{colors.enamel}"
+    textColor: "{colors.ink-navy}"
+    typography: "{typography.button}"
+    rounded: "{rounded.plate}"
+    padding: "0.8em 1.3em"
     height: "58px"
   button-secondary-hover:
-    backgroundColor: "{colors.press-black}"
+    backgroundColor: "#dff1f6"
+    textColor: "{colors.ink-navy}"
+  enamel-sign:
+    backgroundColor: "{colors.enamel}"
+    textColor: "{colors.ink-navy}"
+    typography: "{typography.headline}"
+    rounded: "{rounded.plate}"
+    padding: "18px 22px 14px"
+  friend-sign:
+    backgroundColor: "{colors.sun-yellow}"
+    textColor: "{colors.ink-navy}"
+    rounded: "{rounded.plate}"
+    padding: "12px 22px 11px"
+  info-sign:
+    backgroundColor: "{colors.tower-blue}"
     textColor: "{colors.white}"
+    rounded: "{rounded.info-sign}"
+    padding: "9px"
+    width: "clamp(56px, 15vw, 88px)"
   play-badge:
-    backgroundColor: "{colors.tabloid-red}"
+    backgroundColor: "{colors.tower-blue}"
     textColor: "{colors.white}"
-    padding: "12px 18px 12px 14px"
-  play-badge-hover:
-    backgroundColor: "{colors.press-black}"
-    textColor: "{colors.white}"
+    rounded: "{rounded.info-sign}"
+    padding: "10px 16px 10px 12px"
   toast:
-    textColor: "{colors.tabloid-red-deep}"
+    backgroundColor: "{colors.sun-yellow}"
+    textColor: "{colors.ink-navy}"
     typography: "{typography.label}"
+    rounded: "{rounded.tag}"
+    padding: "6px 10px 5px"
+  clip-frame:
+    backgroundColor: "{colors.ink-navy}"
+    rounded: "{rounded.plate}"
 ---
 
 # Design System: Hast du Eier?
 
 ## Overview
 
-**Creative North Star: "Die Titelseite"**
+**Creative North Star: "Der Zehner"**
 
-Every verdict is printed as the front page of an invented German Boulevard paper, the EIER-ZEITUNG. The masthead and the desktop table are tabloid red. Black ultra-condensed capitals fill the sheet, and newsprint carries a fine neutral grain. The answer is one word, JA! or NEIN!, set as large as the column allows, so it reads as a headline taller than the paper. The page is loud, flat and printed: hard square edges, solid ink colours, a yellow highlighter, and a serif reserved for reporting. A mobile visit has the density of a real front page: masthead, question, verdict, dek, photo, actions. There is no chrome beyond that.
+The page is the 10-metre diving tower at a German Freibad on a sunny day, the Mutprobe every kid knows. The deep tile-blue tower holds the question on a screwed-on enamel sign; the turquoise pool below holds the countdown and then the verdict; the white-tiled pool edge holds the punchline, the clip and the two buttons. Every surface is a physical fitting of that place: painted concrete, tiles and grout, enamel plates, DIN-style blue info signs, the overflow grate and the ladder.
 
-The paper owns the vocabulary and the motion. EILMELDUNG runs as a ticker while the answer is pending, the headline slams onto the sheet with a short paper jolt, and the rest prints in from top to bottom. NEIN! is not just red text in a different colour: it prints as a Trauerrand, white on a black band across the full sheet. A shared link adds a yellow Störer stamped over the photo.
+Density is low and the type is enormous. The verdict fills the water from wall to wall in Barlow Condensed Black, and everything else is set in the Barlow family, a DIN-like signage grotesk, so the page reads like the signs on the tower. Motion follows the physics of the place: gravity in, ripples out, stepped descents. JA! falls into the water, splash rings spread and the letters wobble under the surface until it settles. NEIN! climbs down rung by rung and the water stays still.
 
-Rejected and not to return: the earlier "Der Eierkarton" egg-carton world (too literal a pun, dull and grey). Also rejected: literal egg imagery, muted grey palettes, and the centred meme-page layout.
+Texture is drawn, never photographed: SVG noise for the painted tower, a displaced grout grid for the pool floor, drifting caustic light, slightly uneven deck tiles. The only photographic material is the third-party clip, shown clean in its frame. Literal eggs are out: "Eier haben" means nerve, and the world expresses nerve as the jump.
 
 **Key Characteristics:**
-- Three inks on newsprint: tabloid red, press black and marker yellow. White appears only reversed out of red or black.
-- Archivo at its narrowest and heaviest (wdth 62, 900) for the question and the verdict. The headline size is computed to fill the measure.
-- Zeitung Serif only for running text and captions.
-- Zero radius everywhere. The only off-axis element is the Störer at -4deg.
-- Hard, fast press hits and top-to-bottom print wipes. Reduced motion gets instant states.
+- Two zones, tower and pool: tower blue above (phone) or left (desktop), turquoise water and white tile below or right.
+- Enamel sign plates with 10px corners, inset rules, four screw heads and a soft navy depth shadow.
+- Barlow Condensed Black for the verdict, question, tower height and countdown; Barlow Medium/Bold for reading text; Barlow Semi Condensed SemiBold for small uppercase signage.
+- Safety red appears only on the word EIER?. Sun yellow is reserved for the friend sign, the toast, focus and selection.
+- Motion is gravity, ripples and ladder steps, with an instant state under reduced motion and the countdown kept.
 
 ## Colors
 
-A three-ink tabloid palette on cool newsprint. Saturated red and pure black do the shouting, and yellow is used only as a highlighter.
+A sunny-day pool palette: saturated tile blue and turquoise water against near-white tile and enamel, with navy ink and two hard safety accents.
 
 ### Primary
-- **Tabloid Red** (`tabloid-red`): the paper's colour. It fills the masthead block, the desktop table behind the sheet, the JA! headline and the "Ja? Nein?" teaser, the primary button and the video play badge. It is also `theme-color`. On newsprint it reaches 4.7:1, so it carries only large display type and filled controls with white text (5.35:1).
-- **Deep Tabloid Red** (`tabloid-red-deep`): the pressed or hover state of red controls and the colour of the toast confirmation line ("Link kopiert"), where small red text needs 7.2:1.
+- **Tower Blue** (#0a5fa8): The tower band and full-height desktop column (under SVG paint noise), primary buttons, blue info signs and the play badge, the inset rule on enamel signs, the blue edge tiles, the scrollbar and `theme-color`. White on it is 6.5:1.
+- **Tower Blue Deep** (#074a85): Hover state for primary buttons and the play badge only.
 
 ### Secondary
-- **Marker Yellow** (`marker-yellow`): highlighter only. It marks the word "Eier?" in the question, fills the friend Störer, is the text-selection colour and the inset focus ring on the play badge.
+- **Pool Turquoise** (#0b93a3): The water. It carries only display-size white text (verdict, countdown, noscript line) because white on it is 3.67:1.
+- **Lane Turquoise** (#087a88): The single 44px lane stripe down the centre of the pool floor.
+- **Overflow Channel** (#0b3a63): The dark ground of the overflow grate strip at the top of the pool edge, under the navy slots.
+
+### Tertiary
+- **Safety Red** (#e2231a): The word EIER? on the question sign (4.6:1 on enamel at display size). Nowhere else.
+- **Sun Yellow** (#ffd400): The friend sign, the toast, the focus outline and text selection. Always with navy ink (10:1), never as a text colour.
 
 ### Neutral
-- **Press Black** (`press-black`): all body ink, the ticker band, the NEIN! Trauerrand, button outlines, rules under the caption and above the desktop text column, and the focus outline.
-- **Newsprint** (`newsprint`): the sheet. It always carries the grain overlay (`--tex-grain`, fractal noise in a cool grey at about 13% alpha), which brings it to about #eff1f0 on screen. Never show newsprint without the grain.
-- **Caption Ink** (`caption-ink`): a softer black for serif photo credits only.
-- **White** (`white`): reversed type on red (masthead, primary button, play badge) and on black (ticker, Trauerrand). It is never a surface.
+- **Tile White** (#f7fbfc): Page background and the base of the deck tile texture, whose 16 tiles vary slightly between #eef6f8 and #fbfefe on #c4dce3 grout.
+- **Grout** (#d3e8ee): Screw heads on enamel plates.
+- **Enamel** (#fdfefe): Sign plates, secondary buttons, the desktop ladder.
+- **Ink Navy** (#062a4d): All text on light surfaces, the friend sign rule, the clip frame, the grate slots on the overflow channel.
+- **Ink Soft** (#2f5878): Captions and the "Springen auf eigene Gefahr." footer (7.2:1 on tile).
+- **White** (#ffffff): Text and pictograms on blue and turquoise, splash rings, the info sign rule.
 
 ### Named Rules
-**The Red Owns The Paper Rule.** Red is the masthead, the table and the good news. Use it as a flat solid fill or as display ink, never as a tint, gradient or body text colour.
+**The Safety Red Rule.** Red marks danger, so it marks only EIER? (and future alerts). It never fills a surface or a button.
 
-**The Highlighter Rule.** Yellow sits behind black text as a marker or a stamped Störer. It is never text on paper and never a background for a whole region.
-
-**The Trauerrand Rule.** Black bands are for bad news and breaking news only: the NEIN! headline and the EILMELDUNG ticker. Both bleed to the sheet edges (negative gutter margins).
+**The Deep Water Rule.** White text goes on the pool only at display size. Body, captions and buttons live on the tiled edge or the tower.
 
 ## Typography
 
-**Display Font:** Archivo variable (wdth 62–125, wght 100–900), with Helvetica Neue and Arial as fallbacks
-**Body Font:** Zeitung Serif: Zeitung Serif, instanced to wght 400–600 / opsz 12–24, subset to Latin-1 and renamed per the OFL Reserved Font Name, with Georgia as fallback
+**Display Font:** Barlow Condensed Black 900 (with Arial Narrow, sans-serif)
+**Body Font:** Barlow Medium 500 / Bold 700 (with Helvetica Neue, Arial, sans-serif)
+**Label Font:** Barlow Semi Condensed SemiBold 600 (with Barlow, Helvetica Neue, Arial, sans-serif)
 
-**Character:** a condensed grotesk shouting in capitals over a sober text serif, the voice split of a real tabloid. Width does the work that size cannot: condensed (62%) for the big words, semi-condensed (85%) for deks and labels, normal (100%) for the masthead and dateline.
+**Character:** One signage family in three widths, like the lettering on a pool's rules board. Self-hosted WOFF2 subset to Latin-1 plus German punctuation, SIL OFL (licence in `assets/fonts/OFL-barlow.txt`, no Reserved Font Name). Condensed Black and Bold are preloaded.
 
 ### Hierarchy
-- **Display / verdict headline** (900, wdth 62, fitted, line-height 0.8, -0.02em, uppercase, red; white on black for NEIN!): the single answer word. Size = `min(measure / (characters × fit), 64svh)`, where fit is 0.385 per character (0.4 for JA!, whose J and A run wider). `--len` is set from the headline's character count by the script, and `--measure` is the column width (`100vw − 2 × gutter` on phones, `min(1180px, 100vw − 64px) − 2 × gutter` on desktop). On desktop the JA! variant is capped at 48svh so the photo beside it stays landscape. The "Ja? Nein?" teaser uses a virtual length of 5.8 on phones (two lines) and 10.5 on desktop (one line, no wrap).
-- **Masthead** (900, wdth 100, clamp(2rem, 11.4vw, 5.5rem), line-height 0.86, -0.035em, uppercase, white on red): the invented paper name only.
-- **Headline / question** (900, wdth 62, clamp(3.25rem, 17vw, 8.5rem), on desktop clamp(5rem, 9vw, 8.5rem), line-height 0.86, uppercase, balanced): "HAST DU EIER?", the page's h1.
-- **Title / dek** (900, wdth 85, clamp(1.625rem, 7.4vw, 2.75rem), on desktop clamp(2rem, 3.2vw, 2.75rem), line-height 1.02, sentence case, balanced): the verdict line with its emoji. The emoji is bound to the last word with a non-breaking space.
-- **Ticker** (800, wdth 85, clamp(1.125rem, 4.6vw, 1.75rem), +0.02em, uppercase, white on black): `+++`-separated breaking-news copy.
-- **Body / lede** (Zeitung Serif 600, clamp(1.1875rem, 4.6vw, 1.4375rem), line-height 1.35, max 38ch): the optional punchline under the dek.
-- **Caption** (Zeitung Serif 400, 0.875rem, line-height 1.35, caption ink, 1px black rule above): photo and video credits.
-- **Label** (900, wdth 85, +0.04em, uppercase): buttons (1.1875rem), the play badge and the toast (1rem), and the Störer (clamp(.8125rem, 3.4vw, 1.125rem), +0.02em, line-height 1.05).
-- **Meta / dateline** (700, wdth 100, 0.8125rem, +0.04em, uppercase): the date, edition number and price in the masthead. Short date format on phones, long format from 900px.
-- **Base** (Archivo 1.0625rem, line-height 1.45): the inherited default.
+- **Display** (900, `min(calc(100cqi / (len × fit)), 40svh)`, 0.8, uppercase): The verdict JA! / NEIN!, sized from its character count against the pool's container width; `--fit` is 0.4 for NEIN!, 0.42 for JA!; cap rises to 48svh at 900px+. Soft text shadow `0 .03em .12em rgba(4,50,60,.45)` keeps it legible over caustics.
+- **Countdown** (900, `min(46cqi, 34svh)`, 0.8): 3-2-1 in the water.
+- **Tower height** (900, `clamp(4.5rem, 26vw, 8rem)`, 0.78, -0.02em; desktop `clamp(6rem, 10vw, 9.5rem)`): The painted "10 m", unit at 0.42em.
+- **Headline** (900, `clamp(3rem, 15.5vw, 6.5rem)`, 0.88, uppercase, balanced; desktop `clamp(3.5rem, 6vw, 6rem)`): HAST DU EIER? on the enamel sign.
+- **Title** (700, `clamp(1.625rem, 7vw, 2.5rem)`, 1.08, -0.01em; desktop `clamp(2rem, 2.8vw, 2.75rem)`): The verdict line with its emoji (the dek).
+- **Lede** (500, `clamp(1.1875rem, 4.6vw, 1.375rem)`, 1.35, max 38ch): The optional punchline.
+- **Body** (500, 1.0625rem, 1.45): Base text, friend sign at 700 `clamp(1.125rem, 4.8vw, 1.375rem)`.
+- **Button** (700, 1.1875rem, 0.05em, uppercase): Button labels.
+- **Label** (Semi Condensed 600, 0.8125–0.9375rem, 0.05–0.06em, uppercase): Tower meta "Sprungturm / Versuch n", toast, footer rules sign. Clip captions use the same face at 0.875rem in sentence case.
 
 ### Named Rules
-**The Narrowest-Heaviest Rule.** The question and the verdict use Archivo at wdth 62 and weight 900, uppercase, with line-height at most 0.86. Never use a lighter or wider cut for front-page words.
-
-**The Fill-The-Measure Rule.** The verdict headline is sized from its character count, not from a fixed step. A new headline sets `--len` and inherits the formula. It never wraps mid-word, and it is capped by viewport height.
-
-**The Serif Reports Rule.** Zeitung Serif is used only for reported text: the lede and captions. Everything that shouts is Archivo.
+**The Signboard Rule.** Anything shouted is Barlow Condensed Black in uppercase; anything read is Barlow in sentence case. No second family.
 
 ## Layout
 
-**Phone (below 900px):** the sheet is the whole viewport (newsprint, min-height 100svh). The red masthead runs full bleed at the top, and the dateline wraps under a 2px white rule spread with `space-between`. Content uses a 16px gutter and an 18px vertical stack. The reading order is a single column: question, ticker (while waiting), headline, dek, lede, photo, actions, toast. Ticker and Trauerrand break out to the sheet edges with negative gutter margins. The two buttons sit side by side when they fit (`flex: 1 1 180px`, 10px gap) and stack otherwise.
+Phone first, one column: the tower band (14px top padding, 16px gutter) with "10 m" and the meta to its right, then the question sign, which hangs 56px down over the pool's top edge. The pool fills `clamp(300px, 54svh, 560px)` and centres the countdown and verdict in one grid cell; the info sign sits bottom-right. The pool edge below stacks dek, lede, clip, actions and toast with an 18px gap; buttons sit in a wrapping row with a 10px gap, each `flex: 1 1 180px`.
 
-**Desktop (900px and up):** the body becomes the red table (40px 32px 64px padding). The sheet is centred at max 1180px and casts the table shadow. The red masthead is inset 16px inside the sheet, with the name on the left and the dateline right-aligned in a column. The gutter grows to 40px. The story is a two-row grid with a 40px column gap:
-- **JA!:** columns `auto | 1fr`, areas `"head photo" / "text photo"`. The headline and the text column sit on the left, and the photo fills the right column at 4:3.
-- **NEIN!:** columns `5fr | 7fr`, areas `"head head" / "text photo"`. The Trauerrand spans the sheet, and the photo sits right below it on the right.
-- The text column starts 24px down under a 3px black rule. Actions stack vertically and are pushed to the column foot (`margin-top: auto`).
+At 900px and up the gutter becomes 40px and the page splits into two full-height columns: the tower at `minmax(340px, 34vw)` on the left, holding height, sign, friend sign and a 92px enamel ladder that fills the remaining height; the pool (60svh) and pool edge on the right. The pool edge becomes a 5fr / 6fr grid with text and stacked full-width buttons left and the clip right, 40px column gap. Verdict, dek and actions are visible without scrolling.
 
-During the ticker, the story body is hidden and only the teaser headline holds the slot.
-
-**Media frames:** black boxes at 16:10 (GIF) or 16:9 (video), and 4:3 for JA! on desktop. Media is cropped to cover.
+While counting, the pool edge contents are hidden with `visibility` so nothing shifts when the verdict lands.
 
 ## Elevation & Depth
 
-The page itself is flat printed matter. Depth exists only where a physical object sits on another: the sheet on the table, and the sticker on the photo. Both shadows are soft and tinted toward their ground. Neither is a hard offset.
+Mostly flat, with one physical depth: enamel plates hang off the tower and cast a soft navy shadow onto what is behind them. Depth inside the pool comes from texture (caustics over a displaced grout grid) rather than shadow.
 
 ### Shadow Vocabulary
-- **Sheet on table** (`box-shadow: 0 30px 60px -24px rgba(60, 0, 4, .6), 0 2px 4px rgba(60, 0, 4, .25)`): desktop only. Lifts the newsprint off the red table.
-- **Stuck-on Störer** (`box-shadow: 0 6px 14px -6px rgba(17, 17, 17, .45)`): the friend banderole over the photo corner.
+- **Plate shadow** (`box-shadow: 0 10px 18px -10px rgba(2,24,48,.55), 0 2px 3px rgba(2,24,48,.2)`): Enamel question sign, friend sign, info sign, clip frame.
+- **Enamel rule** (`box-shadow: inset 0 0 0 5px <plate>, inset 0 0 0 8px <rule>`): The inset frame on sign plates; 8px tower-blue on enamel, 7px navy on the yellow friend sign, 3px/5px white-on-blue on info signs, 2px/4px on the play badge.
+- **Waterline text shadow** (`text-shadow: 0 .03em .12em rgba(4,50,60,.45)`): Verdict only.
 
 ### Named Rules
-**The Printed-Flat Rule.** Nothing printed on the sheet casts a shadow: no headline, button, ticker or photo. Only objects laid on top (the sheet on the table, the Störer on the photo) get depth.
+**The Hanging Plate Rule.** Only screwed-on signs and the clip frame cast shadows, always the plate shadow, always downward. Buttons, tiles and text stay flat.
 
 ## Shapes
 
-Every edge is square (0 radius), including buttons, media frames, bands, the marker and the masthead. Borders are solid black rules in three weights: 1px (caption rule), 2px (white dateline rule on red) and 3px (button outlines, the desktop text-column rule, focus outline). Icons are inline SVG strokes at 2.6 width with square caps and mitred joins, sized 1.15em. The only rotated shape is the Störer (-4deg), which overhangs the photo's top-left corner by -14px / -8px.
-
-**The Square Edge Rule.** No border-radius anywhere. If a new element needs softness, it does not belong on this paper.
+Sign-plate geometry: rectangles with modestly rounded corners, 10px on enamel plates, buttons and the clip frame, 8px on the square blue info signs and the play badge, 6px on the toast. Enamel plates carry four screw heads drawn with radial gradients 12px from each corner. Splash rings are the only ellipses. Repeating stripes draw real fittings only: the 30px overflow channel (navy grate slots, then 34px blue edge tiles with 2px grout) along the top of the pool edge, and the 8px ladder rungs every 46px.
 
 ## Components
 
-### Masthead
-A red block with the invented paper name EIER-ZEITUNG in white Archivo 900, plus the dateline (date · Ausgabe n · 0,00 €). The edition number counts up with every Nochmal. Never use a real paper's name or logo.
-
-### Question with marker
-The h1 "HAST DU EIER?". "Eier?" carries the yellow marker (padding 0 .06em, clone decoration so it survives line breaks).
-
-### EILMELDUNG ticker
-A black, full-bleed band with white condensed capitals and `+++` separators. It scrolls right to left (6s linear, infinite) and is shown only while the stage is "waiting" (1400ms suspense before each verdict). It is hidden from assistive tech.
-
-### Verdict headline
-- **JA!:** red on newsprint, fitted to the measure.
-- **NEIN! (Trauerrand):** white on a black band bleeding to both sheet edges (padding .08em gutter .02em).
-- **Teaser:** "Ja? Nein?" in red while the ticker runs. It is replaced by the slam.
-
-### Dek and lede
-The dek is the verdict line in bold semi-condensed sans, with its emoji. The optional lede follows in serif 600, tucked 6px closer on phones.
-
-### Photo and caption
-A black media frame with a serif credit under a 1px black rule. GIFs play as muted looping video and fall back to the GIF image. YouTube loads as a poster with a red **play badge** ("Video mit Ton", play triangle, bottom-left; black on hover, yellow inset focus ring). The privacy-friendly embed replaces it on click.
-
-### Störer (friend banderole)
-A yellow, black-type, uppercase stamp ("Die Ausgabe von deinem Kumpel") rotated -4deg, overhanging the photo's top-left corner (max-width 78%). It appears only on shared links (`?a=`). The photo gains 16px top margin so the stamp clears the line above.
-
 ### Buttons
-- **Shape:** square (0 radius), 3px border, min-height 58px, padding .85em 1.3em, stroke icon before the label.
-- **Primary:** solid red with white label. Hover turns it deep red. It is "Teilen" by default and "Und du?" (redraw) on a friend's edition, moved to first position.
-- **Secondary:** transparent with a black outline and black label. Hover inverts it to a black fill with white label.
-- **Active:** nudges down 2px. **Disabled:** 45% opacity with progress cursor (while a new edition prints).
-- **Focus:** 3px black outline at 3px offset (global `:focus-visible`).
-- Transitions use 140ms ease-out on colour and translate.
+- **Shape:** sign-plate corners (10px), 3px tower-blue border, min height 58px, label with a 1.15em inline stroke icon (2.6 stroke).
+- **Primary:** tower blue fill, white label. The action the visitor most likely wants (Teilen after their own jump; "Und du?" when they arrived via a friend's link) is primary, the other secondary.
+- **Hover / Focus:** primary deepens to tower blue deep; secondary washes to #dff1f6. Press drops 2px. Focus is a 3px outline offset 3px, navy on buttons, sun yellow elsewhere. Transitions 140ms ease-out.
+- **Secondary:** enamel fill, navy label, same blue border.
+- **Disabled:** 50% opacity with a progress cursor during a jump.
+
+### Enamel sign (question)
+White enamel plate, inset tower-blue rule, four screws, plate shadow, Condensed Black uppercase in navy with EIER? in safety red. On phones it hangs 56px over the pool. While counting it bobs like a diving board (1400ms).
+
+### Friend sign
+Same plate in sun yellow with a navy rule and Barlow Bold sentence-case text. Appears only when a visitor arrives from a shared link and disappears on their own first jump.
+
+### Info sign (pictogram)
+Square blue DIN-style sign with a white inset rule and a white stroke pictogram (jumper over water for JA, figure on a ladder for NEIN). Fades and scales in from 0.6 after the verdict settles, 260ms.
+
+### Clip
+Third-party media in a navy frame with plate corners and plate shadow, 16:10 for GIFs, 16:9 for YouTube. YouTube loads from youtube-nocookie only after a click on the poster; the play badge is a small blue info-sign button labelled VIDEO MIT TON. Caption below in Semi Condensed. No overlays or filters on the media.
 
 ### Toast
-A status line under the actions in deep-red uppercase label type ("Link kopiert", or the raw link if copying fails). It holds 1.4em of height so the layout does not jump.
+A small sun-yellow tag with Semi Condensed uppercase navy text ("Link kopiert"), 6px corners, below the actions.
 
-### Motion grammar
-- **Slam** (380ms, `cubic-bezier(.2, .9, .2, 1)`): the headline drops from scale 1.45, blurred 6px and transparent, overshoots to 0.97 at 60%, and settles at 1.
-- **Paper jolt** (220ms ease-out, fired 220ms after the slam starts): the whole sheet dips 5px, rebounds 2px and settles.
-- **Print wipe** (420ms, `cubic-bezier(.16, 1, .3, 1)`): dek, lede, photo and actions reveal top to bottom with a clip-path inset staggered at 260 / 340 / 420 / 520ms. The clip ends 40px outside the box so the Störer can overhang.
-- **Reduced motion:** slam, jolt and print are instant, and scroll-to-top is not smooth. The ticker stops and shows static text, but the 1400ms suspense remains because it is pacing, not movement.
+### Pool and verdict motion
+- **Countdown tick** (420ms ease-out `cubic-bezier(.16,1,.3,1)`): each number lands from 1.35 scale and zero opacity.
+- **JA! fall** (420ms ease-in `cubic-bezier(.55,0,1,.45)`): drops 70svh while scaling 0.7 to 1, then three splash rings expand and thin (1600ms, staggered 0/140/300ms) and an SVG displacement filter wobbles verdict and rings, decaying from scale 38 to 0 over 1200ms.
+- **NEIN! climb** (1000ms, `steps(4)`): descends 200px in four rungs; caustics pause and dim to 0.3.
+- **Caustics**: drift 320px diagonally over 16s, linear, endless, at 0.36 opacity.
+- **Reduced motion**: all of the above become instant states; the countdown and its pacing remain.
+
+### Imagery and raster provenance
+The only shipped raster is `assets/img/og-zehner.jpg` (1200×630). It is not generated: it is a self-screenshot of `index.html?og` (countdown frozen at 3, reduced motion) taken in headless Chrome on 2026-10-08 with the overrides `.wasser{min-height:630px} .rand,.regeln{display:none} .zaehler{font-size:420px}`; the provenance is also embedded in the JPEG. All clips are third-party embeds (GIPHY mp4/gif, YouTube via youtube-nocookie after a click), not shipped rasters. All textures are inline SVG.
 
 ## Do's and Don'ts
 
 ### Do:
-- **Do** print every verdict as a front-page headline sized by the Fill-The-Measure formula, at Archivo wdth 62 / 900, uppercase.
-- **Do** keep the ink set to tabloid red, press black and marker yellow on grained newsprint. White appears only reversed out of red or black.
-- **Do** set bad news on a full-bleed black Trauerrand band in white, and good news in red on the paper.
-- **Do** reserve Zeitung Serif for the lede and photo credits.
-- **Do** keep motion to hard press hits (slam, jolt) and top-to-bottom print wipes, each with an instant reduced-motion state.
-- **Do** keep every corner square and every rule solid black at 1px, 2px or 3px.
+- **Do** build every new surface from fittings of the Freibad: tower blue (#0a5fa8) paint, turquoise water (#0b93a3), white tile with grout, enamel plates, blue info signs, grate and ladder.
+- **Do** put question-level statements on enamel plates with 10px corners, an inset rule, four screw heads and the plate shadow.
+- **Do** size the verdict from its character count so it fills the pool wall to wall in Barlow Condensed Black, uppercase, line height 0.8.
+- **Do** keep motion physical: gravity in (ease-in fall), ripples out (expanding, thinning rings), stepped descents (`steps(4)`), each with an instant reduced-motion state.
+- **Do** use inline SVG for icons and pictograms, stroked in white or currentColor with round caps.
+- **Do** keep the third-party clip clean in its navy frame and load YouTube from youtube-nocookie only after a click.
 
 ### Don't:
-- **Don't** return to the rejected Eierkarton world: no egg-carton or literal egg imagery, and no muted grey palettes.
-- **Don't** use a real newspaper's name, logo or masthead lettering. The paper is always the invented EIER-ZEITUNG.
-- **Don't** round corners or add drop shadows to anything printed on the sheet.
-- **Don't** use yellow as text colour or as a surface fill beyond the marker and the Störer.
-- **Don't** put filters, scanlines or screen overlays on the clips. Media is shown clean in a black frame.
-- **Don't** centre the page as a meme card. The front page reads top-down on phones and verdict-first in two columns on desktop.
+- **Don't** use egg imagery of any kind; "Eier" means nerve, and the jump is the image for it.
+- **Don't** use safety red (#e2231a) for anything but EIER? and alerts, and don't use sun yellow (#ffd400) as a text colour.
+- **Don't** set body, captions or buttons in white on the turquoise water; it is 3.67:1 and holds display type only.
+- **Don't** use gradients, glows or glass as decoration. Gradients may only draw real fittings (lane line, grate, edge tiles, ladder, screws).
+- **Don't** introduce a second type family; width and weight within Barlow carry the hierarchy.
+- **Don't** put filters, tints or overlays on the clips.

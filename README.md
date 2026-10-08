@@ -2,19 +2,19 @@
 
 Eier, wir brauchen Eier. Hast du Eier?
 
-Eine statische Seite im Stil einer Boulevard-Titelseite: Nach der Eilmeldung knallt die Antwort als Schlagzeile aufs Blatt. Ja und Nein kommen je zur Hälfte, ein Ja ist eine von drei Ja-Antworten.
+Eine statische Seite am Zehner im Freibad: Drei, zwei, eins, dann fällt das JA! mit Platsch ins Becken, oder das NEIN! klettert die Leiter wieder runter. Ja und Nein kommen je zur Hälfte, ein Ja ist eine von drei Ja-Antworten.
 
 ## Aufbau
 
 - `index.html`: die Seite
 - `assets/js/answers.js`: die vier Antworten (Reihenfolge = `?a=` im geteilten Link)
-- `assets/js/titelseite.js`: Ziehen, Eilmeldung, Schlagzeile, Teilen, Nochmal (nächste Ausgabe)
+- `assets/js/zehner.js`: Ziehen, Countdown, Sprung oder Abstieg, Teilen, Nochmal (nächster Versuch)
 - `assets/js/config.js`: Matomo-URL und Site-ID (leer = kein Tracking)
-- `assets/css/titelseite.css`: die Titelseite
-- `assets/fonts/`: Archivo und Zeitung Serif (= Source Serif 4, umbenannt wegen des Reserved Font Name), beide auf Latin-1 und die genutzten Achsen beschnitten, selbst gehostet (SIL OFL, Lizenzen liegen daneben)
-- `assets/img/og-titelseite.jpg`: Vorschaubild für geteilte Links
+- `assets/css/zehner.css`: Turm, Becken und Beckenrand
+- `assets/fonts/`: Barlow, Barlow Semi Condensed und Barlow Condensed, auf Latin-1 beschnitten, selbst gehostet (SIL OFL, Lizenz liegt daneben)
+- `assets/img/og-zehner.jpg`: Vorschaubild für geteilte Links
 
-Geteilte Links haben die Form `/?a=<0–3>` und öffnen genau diese Ausgabe mit der Banderole „Die Ausgabe von deinem Kumpel“. `/?og` hält die Eilmeldung an; damit wird das Vorschaubild aufgenommen.
+Geteilte Links haben die Form `/?a=<0–3>` und öffnen genau diesen Sprung mit dem Schild „Dein Kumpel stand schon oben“. `/?og` hält den Countdown bei der 3 an; damit wird das Vorschaubild aufgenommen.
 
 ## Lokal starten
 

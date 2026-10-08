@@ -1,6 +1,6 @@
 // Die vier Antworten. Reihenfolge = Index im geteilten Link (?a=0 … ?a=3).
 // Gezogen wird 50/50 Ja oder Nein, danach eine der Ja-Antworten.
-// headline: die Schlagzeile, die über die Titelseite geht.
+// headline: das große Urteil, das ins Becken fällt.
 export const answers = [
     {
         found: true,

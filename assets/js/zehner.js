@@ -3,34 +3,37 @@ import { matomo } from './config.js';
 
 const $ = (selector, root = document) => root.querySelector(selector);
 
-const paper = $('.paper');
-const front = $('.front');
-const story = $('.story');
-const headline = $('.headline');
-const banderole = $('.banderole');
+const pool = $('.becken');
+const verdict = $('.urteil');
+const counter = $('.zaehler');
+const friendSign = $('.kumpel');
 const dek = $('.dek');
 const lede = $('.lede');
-const media = $('.photo__media');
-const caption = $('.photo__caption');
-const dateLine = $('.masthead__date');
-const editionLine = $('.masthead__edition');
+const media = $('.clip__media');
+const caption = $('.clip__caption');
+const attemptLine = $('.turm__versuch');
 const shareButton = $('[data-action="share"]');
 const againButton = $('[data-action="again"]');
 const againLabel = $('.btn__label', againButton);
 const toast = $('.toast');
+const rings = $('.platsch');
+const ripple = $('#unterwasser feDisplacementMap');
 
 const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 const params = new URLSearchParams(window.location.search);
 
-// Die Eilmeldung läuft vor jedem Aufschlag. Sie ist Spannung, keine Bewegung,
+// Drei, zwei, eins: Das Zählen ist Spannung, keine Bewegung,
 // und bleibt deshalb auch bei reduzierter Bewegung.
-const SUSPENSE = 1400;
+const COUNT = ['3', '2', '1'];
+const BEAT = 470;
+const FALL = 420;
+const CLIMB = 1000;
 
 const yesIndices = answers.flatMap((answer, i) => (answer.found ? [i] : []));
 const noIndices = answers.flatMap((answer, i) => (answer.found ? [] : [i]));
 
 let current = null;
-let edition = 1;
+let attempt = 1;
 let busy = false;
 
 const wait = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
@@ -46,7 +49,7 @@ function sharedIndex() {
     return /^\d+$/.test(value ?? '') && Number(value) < answers.length ? Number(value) : null;
 }
 
-/* ───────── Foto ───────── */
+/* ───────── Clip ───────── */
 
 function giphy(item) {
     const video = document.createElement('video');
@@ -84,17 +87,27 @@ function youtube(item) {
         frame.allow = 'autoplay; encrypted-media; picture-in-picture';
         frame.allowFullscreen = true;
         button.replaceWith(frame);
-        track('Foto', 'Video abgespielt');
+        track('Clip', 'Video abgespielt');
     }, { once: true });
     return button;
 }
 
-/* ───────── Satz ───────── */
+// Der Clip lädt schon, während gezählt wird, und ist da, wenn das Urteil landet.
+function prepareMedia(answer) {
+    const isVideo = answer.media.type === 'youtube';
+    media.classList.toggle('clip__media--yt', isVideo);
+    media.replaceChildren(isVideo ? youtube(answer.media) : giphy(answer.media));
+    caption.textContent = isVideo
+        ? 'Oliver Kahn: „Eier, wir brauchen Eier!“ Video: YouTube'
+        : 'Clip: GIPHY';
+}
+
+/* ───────── Urteil ───────── */
 
 function typeset(answer) {
-    headline.textContent = answer.headline;
-    headline.style.setProperty('--len', answer.headline.length);
-    story.dataset.found = String(answer.found);
+    verdict.textContent = answer.headline;
+    verdict.style.setProperty('--len', answer.headline.length);
+    pool.dataset.found = String(answer.found);
 
     // Emoji nie allein in die letzte Zeile
     dek.textContent = answer.title.replace(/ (\S+)$/, ' $1');
@@ -104,48 +117,64 @@ function typeset(answer) {
     toast.textContent = '';
 }
 
-// Der Clip lädt schon, während die Eilmeldung läuft, und ist da, wenn die Schlagzeile landet.
-function prepareMedia(answer) {
-    const isVideo = answer.media.type === 'youtube';
-    media.classList.toggle('photo__media--yt', isVideo);
-    media.replaceChildren(isVideo ? youtube(answer.media) : giphy(answer.media));
-    caption.textContent = isVideo
-        ? 'Oliver Kahn: „Eier, wir brauchen Eier!“ Video:\u00a0YouTube'
-        : 'Foto: GIPHY';
+async function countdown() {
+    for (const n of COUNT) {
+        counter.textContent = n;
+        counter.classList.remove('is-tick');
+        void counter.offsetWidth;
+        counter.classList.add('is-tick');
+        await wait(BEAT);
+    }
 }
 
-/* ───────── Druck ───────── */
+// Unter Wasser wackeln die Buchstaben, bis sich die Oberfläche beruhigt.
+function wobble() {
+    const start = performance.now();
+    const duration = 1200;
+    verdict.style.filter = 'url(#unterwasser)';
+    rings.style.filter = 'url(#unterwasser)';
 
-// Während die Eilmeldung läuft, steht die offene Frage in der Schlagzeile.
-function tease() {
-    headline.textContent = 'Ja? Nein?';
-    // Schmal: zwei Zeilen, so breit wie „Nein?“. Breit: eine Zeile.
-    const narrow = window.matchMedia('(max-width: 899px)').matches;
-    headline.style.setProperty('--len', narrow ? 5.8 : 10.5);
-    delete story.dataset.found;
+    const frame = (now) => {
+        const t = Math.min((now - start) / duration, 1);
+        ripple.setAttribute('scale', (38 * (1 - t) ** 2).toFixed(2));
+        if (t < 1) {
+            requestAnimationFrame(frame);
+        } else {
+            verdict.style.filter = '';
+            rings.style.filter = '';
+        }
+    };
+    requestAnimationFrame(frame);
 }
 
-async function print(index) {
+async function jump(index) {
+    const answer = answers[index];
     current = index;
-    front.dataset.stage = 'waiting';
-    tease();
-    prepareMedia(answers[index]);
-    await wait(SUSPENSE);
 
-    typeset(answers[index]);
-    front.dataset.stage = 'printed';
-    jolt();
-    track('Titelseite', 'Gedruckt', answers[index].title);
-}
+    pool.classList.remove('is-splash', 'is-settled');
+    delete pool.dataset.found;
+    pool.dataset.stage = 'waiting';
+    prepareMedia(answer);
+    await countdown();
 
-function jolt() {
-    if (reducedMotion.matches) return;
-    // Der Aufschlag kommt, wenn die Schlagzeile landet
-    setTimeout(() => {
-        paper.classList.remove('is-jolted');
-        void paper.offsetWidth;
-        paper.classList.add('is-jolted');
-    }, 220);
+    typeset(answer);
+    pool.dataset.stage = 'landed';
+    track('Sprung', answer.found ? 'Gesprungen' : 'Runtergeklettert', answer.title);
+
+    if (reducedMotion.matches) {
+        pool.classList.add('is-settled');
+        return;
+    }
+
+    if (answer.found) {
+        await wait(FALL);
+        pool.classList.add('is-splash');
+        wobble();
+        await wait(300);
+    } else {
+        await wait(CLIMB);
+    }
+    pool.classList.add('is-settled');
 }
 
 async function again() {
@@ -154,26 +183,26 @@ async function again() {
     againButton.disabled = true;
     shareButton.disabled = true;
 
-    // Wer über einen geteilten Link kam, zieht ab jetzt selbst.
-    if (!banderole.hidden) {
-        banderole.hidden = true;
+    // Wer über einen geteilten Link kam, springt ab jetzt selbst.
+    if (!friendSign.hidden) {
+        friendSign.hidden = true;
         againLabel.textContent = 'Nochmal';
         setPrimary(shareButton);
         window.history.replaceState(null, '', window.location.pathname);
     }
 
-    edition += 1;
-    editionLine.textContent = edition;
+    attempt += 1;
+    attemptLine.textContent = attempt;
     window.scrollTo({ top: 0, behavior: reducedMotion.matches ? 'auto' : 'smooth' });
-    track('Titelseite', 'Nochmal');
-    await print(draw());
+    track('Sprung', 'Nochmal');
+    await jump(draw());
 
     againButton.disabled = false;
     shareButton.disabled = false;
     busy = false;
 }
 
-// Hauptknopf ist „Teilen“, bei der Ausgabe vom Kumpel aber „Und du?“.
+// Hauptknopf ist „Teilen“, beim Sprung vom Kumpel aber „Und du?“.
 function setPrimary(button) {
     for (const b of [shareButton, againButton]) {
         b.classList.toggle('btn--primary', b === button);
@@ -235,29 +264,24 @@ function track(category, action, name) {
 
 function start() {
     initMatomo();
-    // Auf dem Handy kurz, damit die Kopfzeile in eine Zeile passt
-    const short = window.matchMedia('(max-width: 899px)').matches;
-    dateLine.textContent = new Date().toLocaleDateString('de-DE', short
-        ? { weekday: 'short', day: 'numeric', month: 'short', year: 'numeric' }
-        : { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' });
     shareButton.addEventListener('click', share);
     againButton.addEventListener('click', again);
 
-    // ?og hält die Eilmeldung an: nur für das Vorschaubild.
+    // ?og hält das Zählen bei der 3 an: nur für das Vorschaubild.
     if (params.has('og')) {
-        front.dataset.stage = 'waiting';
-        tease();
+        pool.dataset.stage = 'waiting';
+        counter.textContent = COUNT[0];
         return;
     }
 
     const fromFriend = sharedIndex();
     if (fromFriend !== null) {
-        banderole.hidden = false;
+        friendSign.hidden = false;
         againLabel.textContent = 'Und du?';
         setPrimary(againButton);
-        print(fromFriend);
+        jump(fromFriend);
     } else {
-        print(draw());
+        jump(draw());
     }
 }
 

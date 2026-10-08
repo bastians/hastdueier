@@ -1,0 +1,759 @@
+/* Hast du Eier? — Der Zehner */
+
+/* Barlow (SIL OFL), auf Latin-1 plus deutsche Satzzeichen beschnitten. */
+@font-face {
+    font-family: "Barlow";
+    src: url("../fonts/barlow-medium.woff2") format("woff2");
+    font-weight: 500;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Barlow";
+    src: url("../fonts/barlow-bold.woff2") format("woff2");
+    font-weight: 700;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Barlow Semi Condensed";
+    src: url("../fonts/barlowsemicondensed-semibold.woff2") format("woff2");
+    font-weight: 600;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Barlow Condensed";
+    src: url("../fonts/barlowcondensed-black.woff2") format("woff2");
+    font-weight: 900;
+    font-display: swap;
+}
+
+:root {
+    --tower: #0a5fa8;
+    --tower-deep: #074a85;
+    --water: #0b93a3;
+    --water-lane: #087a88;
+    --tile: #f7fbfc;
+    --grout: #d3e8ee;
+    --enamel: #fdfefe;
+    --ink: #062a4d;
+    --ink-soft: #2f5878;
+    --red: #e2231a;
+    --sun: #ffd400;
+    --white: #ffffff;
+
+    --font-body: "Barlow", "Helvetica Neue", Arial, sans-serif;
+    --font-label: "Barlow Semi Condensed", "Barlow", "Helvetica Neue", Arial, sans-serif;
+    --font-display: "Barlow Condensed", "Arial Narrow", sans-serif;
+
+    --gutter: 16px;
+    --plate: 10px;
+    --ease-out: cubic-bezier(.16, 1, .3, 1);
+    --ease-fall: cubic-bezier(.55, 0, 1, .45);
+    --screws:
+        radial-gradient(circle at 12px 12px, var(--grout) 3px, rgba(6, 42, 77, .35) 3.5px, transparent 4.5px),
+        radial-gradient(circle at calc(100% - 12px) 12px, var(--grout) 3px, rgba(6, 42, 77, .35) 3.5px, transparent 4.5px),
+        radial-gradient(circle at 12px calc(100% - 12px), var(--grout) 3px, rgba(6, 42, 77, .35) 3.5px, transparent 4.5px),
+        radial-gradient(circle at calc(100% - 12px) calc(100% - 12px), var(--grout) 3px, rgba(6, 42, 77, .35) 3.5px, transparent 4.5px);
+    --shadow-plate: 0 10px 18px -10px rgba(2, 24, 48, .55), 0 2px 3px rgba(2, 24, 48, .2);
+
+    /* Gestrichener Beton am Turm */
+    --tex-paint: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n' x='0' y='0' width='100%25' height='100%25'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 .1 0 0 0 0 .2 0 0 0 .16 -.04'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url%28%23n%29'/%3E%3C/svg%3E");
+    /* Fugen am Beckenboden, vom Wasser gebrochen */
+    --tex-floor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='336' height='336'%3E%3Cfilter id='r' x='-20%25' y='-20%25' width='140%25' height='140%25'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.018' numOctaves='1' seed='3' stitchTiles='stitch'/%3E%3CfeDisplacementMap in='SourceGraphic' scale='7' xChannelSelector='R' yChannelSelector='G'/%3E%3C/filter%3E%3Cpath filter='url%28%23r%29' d='M-56 -56V392M-28 -56V392M0 -56V392M28 -56V392M56 -56V392M84 -56V392M112 -56V392M140 -56V392M168 -56V392M196 -56V392M224 -56V392M252 -56V392M280 -56V392M308 -56V392M336 -56V392M364 -56V392M392 -56V392M-56 -56H392M-56 -28H392M-56 0H392M-56 28H392M-56 56H392M-56 84H392M-56 112H392M-56 140H392M-56 168H392M-56 196H392M-56 224H392M-56 252H392M-56 280H392M-56 308H392M-56 336H392M-56 364H392M-56 392H392' stroke='%23fff' stroke-opacity='.24' stroke-width='1.6' fill='none'/%3E%3C/svg%3E");
+    /* Weiße Fliesen am Beckenrand, jede ein wenig anders */
+    --tex-deck: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='192' height='192'%3E%3Crect width='192' height='192' fill='%23c4dce3'/%3E%3Crect x='1' y='1' width='46' height='46' fill='%23f7fbfc'/%3E%3Crect x='49' y='1' width='46' height='46' fill='%23f1f8fa'/%3E%3Crect x='97' y='1' width='46' height='46' fill='%23fafdfd'/%3E%3Crect x='145' y='1' width='46' height='46' fill='%23eef6f8'/%3E%3Crect x='1' y='49' width='46' height='46' fill='%23f4fafb'/%3E%3Crect x='49' y='49' width='46' height='46' fill='%23fbfefe'/%3E%3Crect x='97' y='49' width='46' height='46' fill='%23f0f7f9'/%3E%3Crect x='145' y='49' width='46' height='46' fill='%23f6fbfc'/%3E%3Crect x='1' y='97' width='46' height='46' fill='%23f9fcfd'/%3E%3Crect x='49' y='97' width='46' height='46' fill='%23eff7f9'/%3E%3Crect x='97' y='97' width='46' height='46' fill='%23f5fafb'/%3E%3Crect x='145' y='97' width='46' height='46' fill='%23f2f9fa'/%3E%3Crect x='1' y='145' width='46' height='46' fill='%23fafcfd'/%3E%3Crect x='49' y='145' width='46' height='46' fill='%23f3f9fa'/%3E%3Crect x='97' y='145' width='46' height='46' fill='%23f8fcfd'/%3E%3Crect x='145' y='145' width='46' height='46' fill='%23f0f8fa'/%3E%3C/svg%3E");
+    /* Lichtnetz auf dem Beckenboden */
+    --tex-caustics: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='320' height='320'%3E%3Cfilter id='c' x='0' y='0' width='100%25' height='100%25'%3E%3CfeTurbulence type='turbulence' baseFrequency='.014 .018' numOctaves='2' seed='7' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 -4.2 0 0 0 1.05'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23c)'/%3E%3C/svg%3E");
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+    background: var(--tile);
+    scrollbar-color: var(--tower) var(--tile);
+}
+
+body {
+    margin: 0;
+    min-height: 100svh;
+    background: var(--tile);
+    color: var(--ink);
+    font-family: var(--font-body);
+    font-size: 1.0625rem;
+    font-weight: 500;
+    line-height: 1.45;
+    -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+    background: var(--sun);
+    color: var(--ink);
+}
+
+:focus-visible {
+    outline: 3px solid var(--sun);
+    outline-offset: 3px;
+}
+
+.filter {
+    position: absolute;
+    width: 0;
+    height: 0;
+}
+
+/* ───────── Turm ───────── */
+
+.turm {
+    position: relative;
+    z-index: 2;
+    /* Das Schild darf unten über das Becken hängen */
+    display: flow-root;
+    padding: 14px var(--gutter) 0;
+    background-color: var(--tower);
+    background-image: var(--tex-paint);
+    color: var(--white);
+}
+
+.turm__kopf {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+/* Die gemalte Höhe am Turm */
+.turm__hoehe {
+    margin: 0;
+    font-family: var(--font-display);
+    font-size: clamp(4.5rem, 26vw, 8rem);
+    font-weight: 900;
+    line-height: .78;
+    letter-spacing: -.02em;
+}
+
+.turm__hoehe span {
+    margin-left: .04em;
+    font-size: .42em;
+}
+
+.turm__meta {
+    display: grid;
+    justify-items: end;
+    gap: 2px;
+    margin: 0 0 4px;
+    font-family: var(--font-label);
+    font-size: .875rem;
+    font-weight: 600;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+}
+
+/* Emailleschild am Geländer, hängt halb über dem Becken */
+.schild {
+    position: relative;
+    margin: 18px 0 -56px;
+    padding: 18px 22px 14px;
+    border-radius: var(--plate);
+    background-color: var(--enamel);
+    background-image: var(--screws);
+    box-shadow: inset 0 0 0 5px var(--enamel), inset 0 0 0 8px var(--tower), var(--shadow-plate);
+    color: var(--ink);
+    font-family: var(--font-display);
+    font-size: clamp(3rem, 15.5vw, 6.5rem);
+    font-weight: 900;
+    line-height: .88;
+    letter-spacing: -.005em;
+    text-align: center;
+    text-transform: uppercase;
+    text-wrap: balance;
+}
+
+.schild em {
+    font-style: normal;
+    color: var(--red);
+}
+
+.leiter {
+    display: none;
+}
+
+/* Brett wippt, solange gezählt wird */
+.bad:has(.becken[data-stage="waiting"]) .schild {
+    animation: wippen 1400ms var(--ease-out);
+}
+
+@keyframes wippen {
+    0%, 100% { translate: 0 0; }
+    18% { translate: 0 7px; }
+    36% { translate: 0 -3px; }
+    54% { translate: 0 4px; }
+    72% { translate: 0 -1px; }
+}
+
+/* ───────── Becken ───────── */
+
+/* Fliesen laufen unter Beckenrand und Hinweis durch, ohne Stoß */
+.becken {
+    background-color: var(--tile);
+    background-image: var(--tex-deck);
+}
+
+.wasser {
+    position: relative;
+    display: grid;
+    place-items: center;
+    min-height: clamp(300px, 54svh, 560px);
+    padding: 72px var(--gutter) 28px;
+    overflow: hidden;
+    container-type: inline-size;
+    background-color: var(--water);
+    background-image:
+        var(--tex-floor),
+        linear-gradient(90deg, transparent calc(50% - 22px), var(--water-lane) calc(50% - 22px), var(--water-lane) calc(50% + 22px), transparent calc(50% + 22px));
+    background-position: center top, 0 0;
+    color: var(--white);
+}
+
+/* Lichtnetz, zieht langsam über den Boden */
+.wasser::before {
+    content: "";
+    position: absolute;
+    inset: -320px 0 0 -320px;
+    background-image: var(--tex-caustics);
+    opacity: .36;
+    animation: caustics 16s linear infinite;
+    pointer-events: none;
+}
+
+@keyframes caustics {
+    to { translate: 320px 320px; }
+}
+
+/* Stilles Wasser, wenn keiner springt */
+.becken[data-found="false"] .wasser::before {
+    animation-play-state: paused;
+    opacity: .3;
+}
+
+.zaehler,
+.urteil {
+    position: relative;
+    z-index: 1;
+    grid-area: 1 / 1;
+    margin: 0;
+    font-family: var(--font-display);
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+.zaehler {
+    font-size: min(46cqi, 34svh);
+    line-height: .8;
+}
+
+.zaehler.is-tick {
+    animation: tick 420ms var(--ease-out);
+}
+
+@keyframes tick {
+    from { opacity: 0; scale: 1.35; }
+    to { opacity: 1; scale: 1; }
+}
+
+.becken[data-stage="waiting"] .urteil,
+.becken:not([data-stage="waiting"]) .zaehler {
+    display: none;
+}
+
+.urteil {
+    --len: 3;
+    /* Breite pro Zeichen; J und A laufen breiter als N, E und I */
+    --fit: .4;
+    --cap: 40svh;
+    font-size: min(calc(100cqi / (var(--len) * var(--fit))), var(--cap));
+    line-height: .8;
+    letter-spacing: -.01em;
+    padding-top: .04em;
+    /* Hält das Weiß auch über hellen Lichtflecken lesbar */
+    text-shadow: 0 .03em .12em rgba(4, 50, 60, .45);
+}
+
+.becken[data-found="true"] .urteil {
+    --fit: .42;
+}
+
+/* Ja: fällt mit Schwerkraft ins Wasser */
+.becken[data-stage="landed"][data-found="true"] .urteil {
+    animation: fall 420ms var(--ease-fall) both;
+}
+
+@keyframes fall {
+    from { translate: 0 -70svh; scale: .7; }
+    to { translate: 0 0; scale: 1; }
+}
+
+/* Nein: klettert Sprosse für Sprosse runter */
+.becken[data-stage="landed"][data-found="false"] .urteil {
+    animation: klettern 1000ms steps(4, end) both;
+}
+
+@keyframes klettern {
+    from { translate: 0 -200px; opacity: .2; }
+    to { translate: 0 0; opacity: 1; }
+}
+
+/* Platsch: Ringe laufen auseinander */
+/* Volle Fläche, damit der Unterwasser-Filter die Ringe nicht abschneidet */
+.platsch {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.platsch i {
+    position: absolute;
+    left: 50%;
+    top: 64%;
+    width: 40px;
+    height: 12px;
+    translate: -50% -50%;
+    border: 4px solid var(--white);
+    border-radius: 50%;
+    opacity: 0;
+}
+
+.becken.is-splash .platsch i {
+    animation: ring 1600ms var(--ease-out) both;
+}
+
+.becken.is-splash .platsch i:nth-child(2) { animation-delay: 140ms; }
+.becken.is-splash .platsch i:nth-child(3) { animation-delay: 300ms; }
+
+/* Ringe werden größer und dabei dünner, wie echte Wellen */
+@keyframes ring {
+    0% { opacity: 1; width: 40px; height: 12px; border-width: 5px; }
+    55% { opacity: .75; }
+    100% { opacity: 0; width: min(150cqi, 760px); height: min(42cqi, 210px); border-width: 1px; }
+}
+
+/* Hinweisschild mit Piktogramm, blau mit weißem Rand */
+.piktogramm {
+    position: absolute;
+    right: var(--gutter);
+    bottom: 18px;
+    z-index: 1;
+    width: clamp(56px, 15vw, 88px);
+    aspect-ratio: 1;
+    padding: 9px;
+    border-radius: 8px;
+    background: var(--tower);
+    box-shadow: inset 0 0 0 3px var(--white), inset 0 0 0 5px var(--tower), var(--shadow-plate);
+    opacity: 0;
+    scale: .6;
+    transition: opacity 260ms var(--ease-out), scale 260ms var(--ease-out);
+}
+
+.piktogramm svg {
+    display: none;
+    width: 100%;
+    height: 100%;
+    fill: none;
+    stroke: var(--white);
+    stroke-width: 6;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.piktogramm circle {
+    fill: var(--white);
+    stroke: none;
+}
+
+.becken[data-found="true"] .piktogramm--ja,
+.becken[data-found="false"] .piktogramm--nein {
+    display: block;
+}
+
+.becken.is-settled .piktogramm {
+    opacity: 1;
+    scale: 1;
+}
+
+/* Gelbes Emailleschild am Turm: der Sprung vom Kumpel */
+.kumpel {
+    margin: 14px 0 0;
+    padding: 12px 22px 11px;
+    border-radius: var(--plate);
+    background-color: var(--sun);
+    background-image: var(--screws);
+    box-shadow: inset 0 0 0 5px var(--sun), inset 0 0 0 7px var(--ink), var(--shadow-plate);
+    color: var(--ink);
+    font-size: clamp(1.125rem, 4.8vw, 1.375rem);
+    font-weight: 700;
+    line-height: 1.2;
+    text-align: center;
+}
+
+.kumpel[hidden] {
+    display: none;
+}
+
+/* ───────── Beckenrand ───────── */
+
+.rand {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    padding: 50px var(--gutter) 28px;
+}
+
+/* Überlaufrinne und die blaue Fliesenkante */
+.rand::before {
+    content: "";
+    position: absolute;
+    inset: 0 0 auto;
+    height: 30px;
+    background:
+        repeating-linear-gradient(90deg, var(--ink) 0 5px, transparent 5px 11px) 0 0 / 100% 12px no-repeat,
+        repeating-linear-gradient(90deg, var(--tower) 0 34px, var(--tile) 34px 36px) 0 12px / 100% 18px no-repeat;
+    background-color: #0b3a63;
+}
+
+.becken[data-stage="waiting"] .rand > :not(.toast) {
+    visibility: hidden;
+}
+
+.dek {
+    margin: 0;
+    font-size: clamp(1.625rem, 7vw, 2.5rem);
+    font-weight: 700;
+    line-height: 1.08;
+    letter-spacing: -.01em;
+    text-wrap: balance;
+}
+
+.lede {
+    max-width: 38ch;
+    margin: -8px 0 0;
+    font-size: clamp(1.1875rem, 4.6vw, 1.375rem);
+    line-height: 1.35;
+}
+
+.clip {
+    margin: 0;
+}
+
+.clip__media {
+    position: relative;
+    aspect-ratio: 16 / 10;
+    overflow: hidden;
+    border-radius: var(--plate);
+    background: var(--ink);
+    box-shadow: var(--shadow-plate);
+}
+
+.clip__media--yt {
+    aspect-ratio: 16 / 9;
+}
+
+.clip__media video,
+.clip__media img,
+.clip__media iframe {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    object-fit: cover;
+}
+
+.clip__caption {
+    margin-top: 8px;
+    font-family: var(--font-label);
+    font-size: .875rem;
+    font-weight: 600;
+    line-height: 1.35;
+    color: var(--ink-soft);
+}
+
+.play {
+    all: unset;
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    cursor: pointer;
+}
+
+.play img {
+    position: absolute;
+    inset: 0;
+}
+
+.play__badge {
+    position: absolute;
+    left: 12px;
+    bottom: 12px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 16px 10px 12px;
+    border-radius: 8px;
+    background: var(--tower);
+    box-shadow: inset 0 0 0 2px var(--white), inset 0 0 0 4px var(--tower);
+    color: var(--white);
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: .04em;
+    text-transform: uppercase;
+    transition: background-color 160ms var(--ease-out), box-shadow 160ms var(--ease-out);
+}
+
+.play__badge svg {
+    width: 20px;
+    height: 20px;
+    fill: currentColor;
+}
+
+.play:hover .play__badge {
+    background: var(--tower-deep);
+    box-shadow: inset 0 0 0 2px var(--white), inset 0 0 0 4px var(--tower-deep);
+}
+
+.play:focus-visible .play__badge {
+    outline: 3px solid var(--sun);
+    outline-offset: 2px;
+}
+
+/* ───────── Knöpfe ───────── */
+
+.actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: .55em;
+    flex: 1 1 180px;
+    min-height: 58px;
+    padding: .8em 1.3em;
+    border: 3px solid var(--tower);
+    border-radius: var(--plate);
+    font: inherit;
+    font-size: 1.1875rem;
+    font-weight: 700;
+    letter-spacing: .05em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 140ms var(--ease-out), border-color 140ms var(--ease-out), translate 140ms var(--ease-out);
+    -webkit-tap-highlight-color: transparent;
+}
+
+.btn:focus-visible {
+    outline-color: var(--ink);
+}
+
+.btn__icon {
+    width: 1.15em;
+    height: 1.15em;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2.6;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.btn--primary {
+    background: var(--tower);
+    color: var(--white);
+}
+
+.btn--primary:hover {
+    border-color: var(--tower-deep);
+    background: var(--tower-deep);
+}
+
+.btn--secondary {
+    background: var(--enamel);
+    color: var(--ink);
+}
+
+.btn--secondary:hover {
+    background: #dff1f6;
+}
+
+.btn:active {
+    translate: 0 2px;
+}
+
+.btn:disabled {
+    opacity: .5;
+    cursor: progress;
+}
+
+/* Meldungen kommen als kleines Schild */
+.toast {
+    align-self: flex-start;
+    margin: -6px 0 0;
+    padding: 6px 10px 5px;
+    border-radius: 6px;
+    background: var(--sun);
+    color: var(--ink);
+    font-family: var(--font-label);
+    font-size: .9375rem;
+    font-weight: 600;
+    letter-spacing: .05em;
+    text-transform: uppercase;
+    overflow-wrap: anywhere;
+}
+
+.toast:empty {
+    visibility: hidden;
+}
+
+.regeln {
+    padding: 0 var(--gutter) 28px;
+    color: var(--ink-soft);
+    font-family: var(--font-label);
+    font-size: .8125rem;
+    font-weight: 600;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+}
+
+.noscript {
+    margin: 0;
+    padding: 24px var(--gutter);
+    background: var(--water);
+    color: var(--white);
+    font-family: var(--font-display);
+    font-size: 2rem;
+    font-weight: 900;
+    line-height: 1;
+    text-transform: uppercase;
+}
+
+/* ───────── Großes Format: Turm links, Becken rechts ───────── */
+
+@media (min-width: 900px) {
+    :root {
+        --gutter: 40px;
+    }
+
+    .bad {
+        display: grid;
+        grid-template-columns: minmax(340px, 34vw) minmax(0, 1fr);
+        min-height: 100svh;
+    }
+
+    /* Turm läuft über die ganze Seitenhöhe, die Leiter füllt den Rest */
+    .turm {
+        display: flex;
+        flex-direction: column;
+        min-height: 100svh;
+        padding: 32px 32px 0;
+    }
+
+    .turm__hoehe {
+        font-size: clamp(6rem, 10vw, 9.5rem);
+    }
+
+    .schild {
+        margin: 32px 0 0;
+        font-size: clamp(3.5rem, 6vw, 6rem);
+    }
+
+    /* Leiter vom Turm runter */
+    .leiter {
+        display: block;
+        flex: 1;
+        width: 92px;
+        margin: 32px 0 0 auto;
+        border-inline: 8px solid var(--enamel);
+        background: repeating-linear-gradient(transparent 0 38px, var(--enamel) 38px 46px);
+        opacity: .9;
+    }
+
+    .becken {
+        display: flex;
+        flex-direction: column;
+        min-height: 100svh;
+    }
+
+    .wasser {
+        min-height: 60svh;
+        padding-top: 48px;
+    }
+
+    .urteil {
+        --cap: 48svh;
+    }
+
+    .piktogramm {
+        top: 24px;
+        bottom: auto;
+    }
+
+    /* Kumpel-Schild hängt unter der Frage */
+    .turm__kopf { order: 0; }
+    .schild { order: 1; }
+    .kumpel { order: 2; margin-top: 18px; }
+    .leiter { order: 3; }
+
+    .rand {
+        flex: 1;
+        display: grid;
+        grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
+        grid-template-areas:
+            "dek clip"
+            "lede clip"
+            "actions clip"
+            "toast clip";
+        grid-template-rows: auto auto 1fr auto;
+        column-gap: 40px;
+        row-gap: 18px;
+        align-items: start;
+    }
+
+    .dek { grid-area: dek; }
+    .lede { grid-area: lede; }
+    .clip { grid-area: clip; }
+    .actions { grid-area: actions; align-self: end; }
+    .toast { grid-area: toast; }
+
+    .dek {
+        font-size: clamp(2rem, 2.8vw, 2.75rem);
+    }
+
+    .btn {
+        flex: 1 1 100%;
+    }
+}
+
+/* ───────── Weniger Bewegung ───────── */
+
+@media (prefers-reduced-motion: reduce) {
+    .wasser::before,
+    .zaehler.is-tick,
+    .bad:has(.becken[data-stage="waiting"]) .schild,
+    .becken[data-stage="landed"] .urteil,
+    .becken.is-splash .platsch i {
+        animation: none;
+    }
+
+    .piktogramm {
+        transition: none;
+    }
+}
