@@ -20,6 +20,15 @@ Anyone who gets the link from a friend, in a group chat, on social media or befo
 
 A pure-fun, shareable gag. The site asks one question, "Hast du Eier?", and answers it at random with a yes or a no, a punchline and a GIF or video clip. Success means people laugh and share it. There is no business goal.
 
+## What "Eier haben" Means
+
+- **The idiom.** "Eier haben" (also "Eier in der Hose haben") is colloquial German for being brave, determined and assertive. Someone who "hat Eier" dares something, takes a risk or stands by their opinion.
+- **The opposite.** "Keine Eier haben" means being cowardly, fearful or weak. That is the sting of the NEIN verdict.
+- **The double meaning.** "Eier" is slang for testicles, so the phrase is the German equivalent of "having balls". The answers lean on this: "riesen Kawenzmänner" brags about size, and "schwer zu finden" is a dig about being small.
+- **The source.** Oliver Kahn's TV line "Eier, wir brauchen Eier!" demanded courage and fight from his team. The site turns that demand into a personal question.
+
+So "Hast du Eier?" asks "Have you got the guts?", not anything about eggs. Design and copy should read as a verdict on someone's nerve. Literal eggs (cartons, breakfast, farm imagery) miss the joke; that is why the egg-carton design was rejected.
+
 ## Positioning
 
 A one-question oracle built on a specific, well-known German football meme. The joke is the whole product: one question, a random verdict, a fitting clip, and nothing else to do except try again or share it.
