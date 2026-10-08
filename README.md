@@ -24,13 +24,3 @@ Die Seite lädt ES-Module und braucht deshalb einen Webserver, `file://` reicht 
 python3 -m http.server 8000
 open http://localhost:8000
 ```
-
-## Docker
-
-Das Image ist nginx mit `nginx.conf`: gzip für CSS/JS/SVG, `index.html` immer frisch, CSS/JS eine Stunde, Schriften und Bilder 30 Tage im Cache.
-
-```
-docker build -t hastdueier .
-docker run -p 8000:80 hastdueier
-open http://localhost:8000
-```
