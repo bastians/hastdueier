@@ -1,49 +1,36 @@
-# [hastdueier](http://hastdueier.de) [![Build Status](https://travis-ci.org/bastians/hastdueier.svg?branch=master)](https://travis-ci.org/bastians/hastdueier)
+# [hastdueier](https://www.hastdueier.de)
 
-## API
+Eier, wir brauchen Eier. Hast du Eier?
+
+Eine statische Seite im Stil einer Boulevard-Titelseite: Nach der Eilmeldung knallt die Antwort als Schlagzeile aufs Blatt. Ja und Nein kommen je zur Hälfte, ein Ja ist eine von drei Ja-Antworten.
+
+## Aufbau
+
+- `index.html`: die Seite
+- `assets/js/answers.js`: die vier Antworten (Reihenfolge = `?a=` im geteilten Link)
+- `assets/js/titelseite.js`: Ziehen, Eilmeldung, Schlagzeile, Teilen, Nochmal (nächste Ausgabe)
+- `assets/js/config.js`: Matomo-URL und Site-ID (leer = kein Tracking)
+- `assets/css/titelseite.css`: die Titelseite
+- `assets/fonts/`: Archivo und Zeitung Serif (= Source Serif 4, umbenannt wegen des Reserved Font Name), beide auf Latin-1 und die genutzten Achsen beschnitten, selbst gehostet (SIL OFL, Lizenzen liegen daneben)
+- `assets/img/og-titelseite.jpg`: Vorschaubild für geteilte Links
+
+Geteilte Links haben die Form `/?a=<0–3>` und öffnen genau diese Ausgabe mit der Banderole „Die Ausgabe von deinem Kumpel“. `/?og` hält die Eilmeldung an; damit wird das Vorschaubild aufgenommen.
+
+## Lokal starten
+
+Die Seite lädt ES-Module und braucht deshalb einen Webserver, `file://` reicht nicht.
 
 ```
-GET /api/anwser.php
+python3 -m http.server 8000
+open http://localhost:8000
 ```
 
-Parameter
+## Docker
 
-- `pretty`: [`true`|`false`] Pretty print JSON output.
-
-Get a random answer.
-
-### Example
-
-```
-$ curl -XGET "http://hastdueier.de/api/answer.php?pretty=true"
-
-{
-    "found": false,
-    "headline": "Nein. &#128532;",
-    "description": "Schade! Denn: Eier! Wir brauchen Eier!",
-    "mediaUrl": "https: //img.youtube.com\/vi\/GMnBOQAxe4c\/0.jpg",
-    "mediaEmbed": "<iframe width=\"533\" height=\"300\" src=\"https://www.youtube.com\/embed\/GMnBOQAxe4c?autoplay=1&rel=0&amp;controls=0\" frameborder=\"0\" allowfullscreen><\/iframe>"
-}
-```
-
-## Setup using Docker
-
-1. [Install Docker](https://docs.docker.com/engine/getstarted/step_one/)
-
-2. Run container
+Das Image ist nginx mit `nginx.conf`: gzip für CSS/JS/SVG, `index.html` immer frisch, CSS/JS eine Stunde, Schriften und Bilder 30 Tage im Cache.
 
 ```
 docker build -t hastdueier .
 docker run -p 8000:80 hastdueier
-```
-
-3. Open
-
-```
 open http://localhost:8000
 ```
-
-## Codestyle
-
-The codestyle of hastdueier is enforced by [PHP_CodeSniffer](https://github.com/squizlabs/PHP_CodeSniffer).
-To check the code [Composer](https://getcomposer.org/) has to be installed. Afterwards all dependencies have to be installed by running `composer install` on the command line. Now the codestyle can be checked by running `composer cs`.

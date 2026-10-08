@@ -1,0 +1,376 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-08T16:16:27Z",
+  "title": "Design System: Hast du Eier?",
+  "extensions": {
+    "colorMeta": {
+      "tabloid-red": {
+        "role": "primary",
+        "displayName": "Tabloid Red",
+        "canonical": "#d8000f",
+        "oklch": "oklch(55.5% 0.227 28.0)",
+        "tonalRamp": [
+          "#1f0000",
+          "#4f0002",
+          "#860307",
+          "#bd1818",
+          "#f4352e",
+          "#fd8679",
+          "#fcc0b7",
+          "#fee9e6"
+        ]
+      },
+      "tabloid-red-deep": {
+        "role": "primary",
+        "displayName": "Deep Tabloid Red",
+        "canonical": "#a3000b",
+        "oklch": "oklch(45.0% 0.184 27.6)",
+        "tonalRamp": [
+          "#1f0000",
+          "#500002",
+          "#860107",
+          "#b82521",
+          "#e35046",
+          "#fe8679",
+          "#fdc0b7",
+          "#fee9e6"
+        ]
+      },
+      "marker-yellow": {
+        "role": "secondary",
+        "displayName": "Marker Yellow",
+        "canonical": "#ffe100",
+        "oklch": "oklch(90.7% 0.188 99.5)",
+        "tonalRamp": [
+          "#0e0b00",
+          "#2d2701",
+          "#4f4504",
+          "#756602",
+          "#9b8a1d",
+          "#c5af17",
+          "#edd218",
+          "#fef0a3"
+        ]
+      },
+      "press-black": {
+        "role": "neutral",
+        "displayName": "Press Black",
+        "canonical": "#111111",
+        "oklch": "oklch(17.8% 0.000 89.9)",
+        "tonalRamp": [
+          "#0b0b0b",
+          "#262626",
+          "#454545",
+          "#666666",
+          "#898989",
+          "#aeaeae",
+          "#d1d1d1",
+          "#eeeeee"
+        ]
+      },
+      "newsprint": {
+        "role": "neutral",
+        "displayName": "Newsprint",
+        "canonical": "#f4f6f5",
+        "oklch": "oklch(97.1% 0.002 165.1)",
+        "tonalRamp": [
+          "#0a0b0b",
+          "#252726",
+          "#444545",
+          "#656666",
+          "#888a89",
+          "#acaead",
+          "#cfd1d0",
+          "#edefee"
+        ],
+        "note": "Always under the grain overlay (--tex-grain); renders about #eff1f0 on screen."
+      },
+      "caption-ink": {
+        "role": "neutral",
+        "displayName": "Caption Ink",
+        "canonical": "#3b3833",
+        "oklch": "oklch(34.2% 0.010 80.7)",
+        "tonalRamp": [
+          "#0d0b07",
+          "#292621",
+          "#48453f",
+          "#696660",
+          "#8c8983",
+          "#b1ada7",
+          "#d4d0ca",
+          "#f2eee7"
+        ]
+      },
+      "white": {
+        "role": "neutral",
+        "displayName": "White",
+        "canonical": "#ffffff",
+        "oklch": "oklch(100.0% 0.000 89.9)",
+        "tonalRamp": [
+          "#0b0b0b",
+          "#262626",
+          "#454545",
+          "#666666",
+          "#898989",
+          "#aeaeae",
+          "#d1d1d1",
+          "#eeeeee"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "masthead": {
+        "displayName": "Masthead",
+        "purpose": "Invented paper name EIER-ZEITUNG only."
+      },
+      "display": {
+        "displayName": "Display",
+        "purpose": "Verdict headline, fitted: min(measure / (len x fit), 64svh); 48svh for JA! on desktop."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "The question HAST DU EIER? (h1). Desktop: clamp(5rem, 9vw, 8.5rem)."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Dek: the verdict line with emoji. Desktop: clamp(2rem, 3.2vw, 2.75rem)."
+      },
+      "ticker": {
+        "displayName": "Ticker",
+        "purpose": "EILMELDUNG band copy."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Lede, serif running text, max 38ch."
+      },
+      "caption": {
+        "displayName": "Caption",
+        "purpose": "Photo and video credits, caption ink."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Buttons, toast, play badge, Störer (uppercase)."
+      },
+      "meta": {
+        "displayName": "Meta",
+        "purpose": "Masthead dateline: date, Ausgabe, price (uppercase)."
+      }
+    },
+    "shadows": [
+      {
+        "name": "sheet-on-table",
+        "value": "0 30px 60px -24px rgba(60, 0, 4, .6), 0 2px 4px rgba(60, 0, 4, .25)",
+        "purpose": "Desktop only: newsprint sheet lifted off the red table."
+      },
+      {
+        "name": "stuck-on-stoerer",
+        "value": "0 6px 14px -6px rgba(17, 17, 17, .45)",
+        "purpose": "Friend banderole stuck over the photo corner."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-press",
+        "value": "cubic-bezier(.2, .9, .2, 1)",
+        "purpose": "Headline slam."
+      },
+      {
+        "name": "ease-out",
+        "value": "cubic-bezier(.16, 1, .3, 1)",
+        "purpose": "Jolt, print wipe, control transitions."
+      },
+      {
+        "name": "suspense",
+        "value": "1400ms",
+        "purpose": "EILMELDUNG ticker before each verdict; kept under reduced motion (pacing, not movement)."
+      },
+      {
+        "name": "ticker",
+        "value": "6s linear infinite, translate -100%",
+        "purpose": "Breaking-news run; static under reduced motion."
+      },
+      {
+        "name": "slam",
+        "value": "380ms ease-press; opacity 0, scale 1.45, blur 6px -> 60%: scale .97 -> scale 1",
+        "purpose": "Verdict headline lands."
+      },
+      {
+        "name": "paper-jolt",
+        "value": "220ms ease-out, starts 220ms after slam; translateY 0 -> 5px -> -2px -> 0",
+        "purpose": "Whole sheet takes the press hit."
+      },
+      {
+        "name": "print-wipe",
+        "value": "420ms ease-out; clip-path inset(-40px -40px 100% -40px) -> inset(-40px); delays 260/340/420/520ms",
+        "purpose": "Dek, lede, photo, actions print in top to bottom."
+      },
+      {
+        "name": "control",
+        "value": "140ms ease-out (buttons), 160ms (play badge)",
+        "purpose": "Colour and nudge transitions."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "slam, jolt, print: none; ticker static; scroll auto",
+        "purpose": "Instant states."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "desktop",
+        "value": "900px",
+        "purpose": "Sheet on red table (max 1180px), gutter 16px -> 40px, two-column story grid, inset masthead."
+      }
+    ],
+    "textures": [
+      {
+        "name": "tex-grain",
+        "value": "SVG feTurbulence fractalNoise baseFrequency .8, 3 octaves, cool grey at ~13% alpha, 200px tile",
+        "purpose": "Always on newsprint."
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Teilen (or Und du? on a friend's edition): solid red, square, 3px border.",
+      "html": "<button class=\"ds-btn ds-btn--primary\" type=\"button\"><svg class=\"ds-btn__icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M12 3v12M7 8l5-5 5 5M5 13v7h14v-7\"/></svg><span>Teilen</span></button>",
+      "css": ":host{--red:#d8000f;--red-deep:#a3000b;--black:#111111;--paper:#f4f6f5;--ink-soft:#3b3833;--yellow:#ffe100;--white:#ffffff;}.ds-btn{display:inline-flex;align-items:center;justify-content:center;gap:.55em;min-height:58px;padding:.85em 1.3em;border:3px solid var(--black);border-radius:0;font-family:Archivo,'Helvetica Neue',Arial,sans-serif;font-size:1.1875rem;font-weight:900;font-stretch:85%;letter-spacing:.04em;text-transform:uppercase;cursor:pointer;transition:background-color 140ms cubic-bezier(.16,1,.3,1),color 140ms cubic-bezier(.16,1,.3,1),translate 140ms cubic-bezier(.16,1,.3,1);}.ds-btn__icon{width:1.15em;height:1.15em;fill:none;stroke:currentColor;stroke-width:2.6;stroke-linecap:square;stroke-linejoin:miter;}.ds-btn--primary{border-color:var(--red);background:var(--red);color:var(--white);}.ds-btn--primary:hover{border-color:var(--red-deep);background:var(--red-deep);}.ds-btn:active{translate:0 2px;}.ds-btn:focus-visible{outline:3px solid var(--black);outline-offset:3px;}"
+    },
+    {
+      "name": "Secondary Button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Nochmal: black outline, inverts to black on hover.",
+      "html": "<button class=\"ds-btn ds-btn--secondary\" type=\"button\"><svg class=\"ds-btn__icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M4 12a8 8 0 0 1 14-5.3M20 4v5h-5M20 12a8 8 0 0 1-14 5.3M4 20v-5h5\"/></svg><span>Nochmal</span></button>",
+      "css": ":host{--red:#d8000f;--red-deep:#a3000b;--black:#111111;--paper:#f4f6f5;--ink-soft:#3b3833;--yellow:#ffe100;--white:#ffffff;}.ds-btn{display:inline-flex;align-items:center;justify-content:center;gap:.55em;min-height:58px;padding:.85em 1.3em;border:3px solid var(--black);border-radius:0;font-family:Archivo,'Helvetica Neue',Arial,sans-serif;font-size:1.1875rem;font-weight:900;font-stretch:85%;letter-spacing:.04em;text-transform:uppercase;cursor:pointer;transition:background-color 140ms cubic-bezier(.16,1,.3,1),color 140ms cubic-bezier(.16,1,.3,1),translate 140ms cubic-bezier(.16,1,.3,1);}.ds-btn__icon{width:1.15em;height:1.15em;fill:none;stroke:currentColor;stroke-width:2.6;stroke-linecap:square;stroke-linejoin:miter;}.ds-btn--secondary{background:transparent;color:var(--black);}.ds-btn--secondary:hover{background:var(--black);color:var(--white);}.ds-btn:active{translate:0 2px;}.ds-btn:focus-visible{outline:3px solid var(--black);outline-offset:3px;}"
+    },
+    {
+      "name": "Masthead",
+      "kind": "nav",
+      "refersTo": "masthead",
+      "description": "Red block with the invented paper name and the dateline.",
+      "html": "<header class=\"ds-masthead\"><p class=\"ds-masthead__name\">Eier-Zeitung</p><p class=\"ds-masthead__meta\"><span>Do., 8. Okt. 2026</span><span>Ausgabe 1</span><span>0,00 €</span></p></header>",
+      "css": ":host{--red:#d8000f;--red-deep:#a3000b;--black:#111111;--paper:#f4f6f5;--ink-soft:#3b3833;--yellow:#ffe100;--white:#ffffff;}.ds-masthead{display:grid;gap:6px;padding:14px 16px 10px;background:var(--red);color:var(--white);font-family:Archivo,'Helvetica Neue',Arial,sans-serif;}.ds-masthead__name{margin:0;font-size:3rem;font-weight:900;font-stretch:100%;line-height:.86;letter-spacing:-.035em;text-transform:uppercase;}.ds-masthead__meta{display:flex;flex-wrap:wrap;gap:2px 14px;justify-content:space-between;margin:0;padding-top:8px;border-top:2px solid var(--white);font-size:.8125rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;white-space:nowrap;}"
+    },
+    {
+      "name": "Question with marker",
+      "kind": "custom",
+      "refersTo": "question-marker",
+      "description": "The h1 in narrowest-heaviest Archivo with the yellow marker on Eier?.",
+      "html": "<h1 class=\"ds-question\">Hast du <mark>Eier?</mark></h1>",
+      "css": ":host{--red:#d8000f;--red-deep:#a3000b;--black:#111111;--paper:#f4f6f5;--ink-soft:#3b3833;--yellow:#ffe100;--white:#ffffff;}.ds-question{margin:0;padding:16px;background:var(--paper);color:var(--black);font-family:Archivo,'Helvetica Neue',Arial,sans-serif;font-size:4rem;font-weight:900;font-stretch:62%;line-height:.86;letter-spacing:-.01em;text-transform:uppercase;}.ds-question mark{padding:0 .06em;background:var(--yellow);color:inherit;box-decoration-break:clone;-webkit-box-decoration-break:clone;}"
+    },
+    {
+      "name": "EILMELDUNG Ticker",
+      "kind": "custom",
+      "refersTo": "ticker",
+      "description": "Black full-bleed band scrolling breaking-news copy during the 1400ms suspense.",
+      "html": "<p class=\"ds-ticker\"><span class=\"ds-ticker__run\">+++ Eilmeldung +++ Hast du Eier? +++ Die Redaktion prüft +++</span></p>",
+      "css": ":host{--red:#d8000f;--red-deep:#a3000b;--black:#111111;--paper:#f4f6f5;--ink-soft:#3b3833;--yellow:#ffe100;--white:#ffffff;}.ds-ticker{margin:0;padding:12px 0;overflow:hidden;background:var(--black);color:var(--white);font-family:Archivo,'Helvetica Neue',Arial,sans-serif;font-size:1.5rem;font-weight:800;font-stretch:85%;letter-spacing:.02em;text-transform:uppercase;white-space:nowrap;}.ds-ticker__run{display:inline-block;padding-left:100%;animation:ds-ticker 6s linear infinite;}@keyframes ds-ticker{to{translate:-100% 0;}}@media (prefers-reduced-motion:reduce){.ds-ticker__run{padding-left:0;animation:none;}}"
+    },
+    {
+      "name": "Verdict Headline JA!",
+      "kind": "custom",
+      "refersTo": "headline-ja",
+      "description": "Red fitted headline on newsprint, slammed in.",
+      "html": "<div class=\"ds-sheet\"><h2 class=\"ds-headline\" style=\"--len:3;--fit:.4\">Ja!</h2></div>",
+      "css": ":host{--red:#d8000f;--red-deep:#a3000b;--black:#111111;--paper:#f4f6f5;--ink-soft:#3b3833;--yellow:#ffe100;--white:#ffffff;}.ds-sheet{--measure:320px;padding:16px;background:var(--paper);}.ds-headline{--fit:.385;margin:0;font-family:Archivo,'Helvetica Neue',Arial,sans-serif;font-size:min(calc(var(--measure) / (var(--len) * var(--fit))), 64svh);font-weight:900;font-stretch:62%;line-height:.8;letter-spacing:-.02em;text-transform:uppercase;color:var(--red);padding-top:.04em;animation:ds-slam 380ms cubic-bezier(.2,.9,.2,1) both;}@keyframes ds-slam{0%{opacity:0;scale:1.45;filter:blur(6px);}60%{opacity:1;scale:.97;filter:blur(0);}100%{scale:1;}}@media (prefers-reduced-motion:reduce){.ds-headline{animation:none;}}"
+    },
+    {
+      "name": "Verdict Headline NEIN! (Trauerrand)",
+      "kind": "custom",
+      "refersTo": "headline-nein",
+      "description": "White fitted headline on a full-bleed black band.",
+      "html": "<div class=\"ds-sheet\"><h2 class=\"ds-headline ds-headline--nein\" style=\"--len:5\">Nein!</h2></div>",
+      "css": ":host{--red:#d8000f;--red-deep:#a3000b;--black:#111111;--paper:#f4f6f5;--ink-soft:#3b3833;--yellow:#ffe100;--white:#ffffff;}.ds-sheet{--measure:320px;padding:16px;background:var(--paper);}.ds-headline{--fit:.385;margin:0;font-family:Archivo,'Helvetica Neue',Arial,sans-serif;font-size:min(calc(var(--measure) / (var(--len) * var(--fit))), 64svh);font-weight:900;font-stretch:62%;line-height:.8;letter-spacing:-.02em;text-transform:uppercase;}.ds-headline--nein{margin-inline:-16px;padding:.08em 16px .02em;background:var(--black);color:var(--white);}"
+    },
+    {
+      "name": "Störer (friend banderole)",
+      "kind": "custom",
+      "refersTo": "banderole",
+      "description": "Yellow stamp rotated -4deg over the photo's top-left corner on shared links.",
+      "html": "<figure class=\"ds-photo\"><p class=\"ds-banderole\">Die Ausgabe von deinem Kumpel</p><div class=\"ds-photo__media\"></div><figcaption class=\"ds-photo__caption\">Foto: GIPHY</figcaption></figure>",
+      "css": ":host{--red:#d8000f;--red-deep:#a3000b;--black:#111111;--paper:#f4f6f5;--ink-soft:#3b3833;--yellow:#ffe100;--white:#ffffff;}.ds-photo{position:relative;margin:24px 16px 0;}.ds-banderole{position:absolute;z-index:2;top:-14px;left:-8px;max-width:78%;margin:0;padding:8px 12px 7px;background:var(--yellow);color:var(--black);font-family:Archivo,'Helvetica Neue',Arial,sans-serif;font-size:1rem;font-weight:900;font-stretch:85%;line-height:1.05;letter-spacing:.02em;text-transform:uppercase;rotate:-4deg;box-shadow:0 6px 14px -6px rgba(17,17,17,.45);}.ds-photo__media{aspect-ratio:16/10;background:var(--black);}.ds-photo__caption{margin-top:7px;padding-top:6px;border-top:1px solid var(--black);font-family:'Zeitung Serif',Georgia,serif;font-size:.875rem;line-height:1.35;color:var(--ink-soft);}"
+    },
+    {
+      "name": "Play Badge",
+      "kind": "button",
+      "refersTo": "play-badge",
+      "description": "Red 'Video mit Ton' badge on the YouTube poster; black on hover, yellow inset focus.",
+      "html": "<button class=\"ds-play\" type=\"button\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M7 4.5v15l13-7.5z\"/></svg>Video mit Ton</button>",
+      "css": ":host{--red:#d8000f;--red-deep:#a3000b;--black:#111111;--paper:#f4f6f5;--ink-soft:#3b3833;--yellow:#ffe100;--white:#ffffff;}.ds-play{display:inline-flex;align-items:center;gap:10px;padding:12px 18px 12px 14px;border:0;border-radius:0;background:var(--red);color:var(--white);font-family:Archivo,'Helvetica Neue',Arial,sans-serif;font-size:1rem;font-weight:900;font-stretch:85%;letter-spacing:.04em;text-transform:uppercase;cursor:pointer;transition:background-color 160ms cubic-bezier(.16,1,.3,1);}.ds-play svg{width:22px;height:22px;fill:currentColor;}.ds-play:hover{background:var(--black);}.ds-play:focus-visible{outline:3px solid var(--yellow);outline-offset:-3px;}"
+    }
+  ],
+  "narrative": {
+    "northStar": "Die Titelseite",
+    "overview": "Every verdict is printed as the front page of an invented German Boulevard paper, the EIER-ZEITUNG. The masthead and the desktop table are tabloid red. Black ultra-condensed capitals fill the sheet, and newsprint carries a fine neutral grain. The answer is one word, JA! or NEIN!, set as large as the column allows, so it reads as a headline taller than the paper. The page is loud, flat and printed: hard square edges, solid ink colours, a yellow highlighter, and a serif reserved for reporting. A mobile visit has the density of a real front page: masthead, question, verdict, dek, photo, actions. There is no chrome beyond that.\n\nThe paper owns the vocabulary and the motion. EILMELDUNG runs as a ticker while the answer is pending, the headline slams onto the sheet with a short paper jolt, and the rest prints in from top to bottom. NEIN! is not just red text in a different colour: it prints as a Trauerrand, white on a black band across the full sheet. A shared link adds a yellow Störer stamped over the photo.\n\nRejected and not to return: the earlier \"Der Eierkarton\" egg-carton world (too literal a pun, dull and grey). Also rejected: literal egg imagery, muted grey palettes, and the centred meme-page layout.",
+    "keyCharacteristics": [
+      "Three inks on newsprint: tabloid red, press black and marker yellow. White appears only reversed out of red or black.",
+      "Archivo at its narrowest and heaviest (wdth 62, 900) for the question and the verdict. The headline size is computed to fill the measure.",
+      "Zeitung Serif only for running text and captions.",
+      "Zero radius everywhere. The only off-axis element is the Störer at -4deg.",
+      "Hard, fast press hits and top-to-bottom print wipes. Reduced motion gets instant states."
+    ],
+    "rules": [
+      {
+        "name": "The Red Owns The Paper Rule",
+        "body": "Red is the masthead, the table and the good news. Use it as a flat solid fill or as display ink, never as a tint, gradient or body text colour.",
+        "section": "colors"
+      },
+      {
+        "name": "The Highlighter Rule",
+        "body": "Yellow sits behind black text as a marker or a stamped Störer. It is never text on paper and never a background for a whole region.",
+        "section": "colors"
+      },
+      {
+        "name": "The Trauerrand Rule",
+        "body": "Black bands are for bad news and breaking news only: the NEIN! headline and the EILMELDUNG ticker. Both bleed to the sheet edges (negative gutter margins).",
+        "section": "colors"
+      },
+      {
+        "name": "The Narrowest-Heaviest Rule",
+        "body": "The question and the verdict use Archivo at wdth 62 and weight 900, uppercase, with line-height at most 0.86. Never use a lighter or wider cut for front-page words.",
+        "section": "typography"
+      },
+      {
+        "name": "The Fill-The-Measure Rule",
+        "body": "The verdict headline is sized from its character count, not from a fixed step. A new headline sets `--len` and inherits the formula. It never wraps mid-word, and it is capped by viewport height.",
+        "section": "typography"
+      },
+      {
+        "name": "The Serif Reports Rule",
+        "body": "Zeitung Serif is used only for reported text: the lede and captions. Everything that shouts is Archivo.",
+        "section": "typography"
+      },
+      {
+        "name": "The Printed-Flat Rule",
+        "body": "Nothing printed on the sheet casts a shadow: no headline, button, ticker or photo. Only objects laid on top (the sheet on the table, the Störer on the photo) get depth.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Square Edge Rule",
+        "body": "No border-radius anywhere. If a new element needs softness, it does not belong on this paper.",
+        "section": "shapes"
+      }
+    ],
+    "dos": [
+      "**Do** print every verdict as a front-page headline sized by the Fill-The-Measure formula, at Archivo wdth 62 / 900, uppercase.",
+      "**Do** keep the ink set to tabloid red, press black and marker yellow on grained newsprint. White appears only reversed out of red or black.",
+      "**Do** set bad news on a full-bleed black Trauerrand band in white, and good news in red on the paper.",
+      "**Do** reserve Zeitung Serif for the lede and photo credits.",
+      "**Do** keep motion to hard press hits (slam, jolt) and top-to-bottom print wipes, each with an instant reduced-motion state.",
+      "**Do** keep every corner square and every rule solid black at 1px, 2px or 3px."
+    ],
+    "donts": [
+      "**Don't** return to the rejected Eierkarton world: no egg-carton or literal egg imagery, and no muted grey palettes.",
+      "**Don't** use a real newspaper's name, logo or masthead lettering. The paper is always the invented EIER-ZEITUNG.",
+      "**Don't** round corners or add drop shadows to anything printed on the sheet.",
+      "**Don't** use yellow as text colour or as a surface fill beyond the marker and the Störer.",
+      "**Don't** put filters, scanlines or screen overlays on the clips. Media is shown clean in a black frame.",
+      "**Don't** centre the page as a meme card. The front page reads top-down on phones and verdict-first in two columns on desktop."
+    ]
+  }
+}

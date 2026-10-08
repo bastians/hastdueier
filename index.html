@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>Hast du Eier?</title>
+    <meta name="description" content="Eier, wir brauchen Eier. Hast du Eier? Die Antwort steht morgen in der Zeitung.">
+    <meta name="theme-color" content="#d8000f">
+
+    <meta property="og:title" content="Hast du Eier?">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.hastdueier.de/">
+    <meta property="og:image" content="https://www.hastdueier.de/assets/img/og-titelseite.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:description" content="Eier, wir brauchen Eier. Die Antwort steht morgen in der Zeitung.">
+    <meta property="og:locale" content="de_DE">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="preload" href="assets/fonts/archivo-var.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="assets/fonts/zeitung-serif-var.woff2" as="font" type="font/woff2" crossorigin fetchpriority="low">
+    <link rel="preconnect" href="https://media.giphy.com">
+    <link rel="preconnect" href="https://i.ytimg.com">
+    <link rel="stylesheet" href="assets/css/titelseite.css">
+    <script type="module" src="assets/js/titelseite.js"></script>
+</head>
+<body>
+    <article class="paper">
+        <header class="masthead">
+            <p class="masthead__name" aria-label="Eier-Zeitung">Eier<span aria-hidden="true">-</span>Zeitung</p>
+            <p class="masthead__meta">
+                <span class="masthead__date"></span>
+                <span>Ausgabe <span class="masthead__edition">1</span></span>
+                <span>0,00 €</span>
+            </p>
+        </header>
+
+        <main class="front" data-stage="waiting">
+            <h1 class="question">Hast du <mark>Eier?</mark></h1>
+
+            <p class="ticker" aria-hidden="true">
+                <span class="ticker__run">+++ Eilmeldung +++ Hast du Eier? +++ Die Redaktion prüft +++ Eilmeldung +++ Hast du Eier? +++ Die Redaktion prüft +++</span>
+            </p>
+
+            <section class="story" aria-labelledby="headline" aria-live="polite">
+                <h2 class="headline" id="headline"></h2>
+
+                <div class="story__body">
+                    <figure class="photo">
+                        <p class="banderole" hidden>Die Ausgabe von deinem Kumpel</p>
+                        <div class="photo__media"></div>
+                        <figcaption class="photo__caption"></figcaption>
+                    </figure>
+
+                    <div class="story__text">
+                        <p class="dek"></p>
+                        <p class="lede" hidden></p>
+
+                        <div class="actions">
+                            <button class="btn btn--primary" type="button" data-action="share">
+                                <svg class="btn__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12M7 8l5-5 5 5M5 13v7h14v-7"/></svg>
+                                <span>Teilen</span>
+                            </button>
+                            <button class="btn btn--secondary" type="button" data-action="again">
+                                <svg class="btn__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12a8 8 0 0 1 14-5.3M20 4v5h-5M20 12a8 8 0 0 1-14 5.3M4 20v-5h5"/></svg>
+                                <span class="btn__label">Nochmal</span>
+                            </button>
+                        </div>
+                        <p class="toast" role="status" aria-live="polite"></p>
+                    </div>
+                </div>
+            </section>
+
+            <noscript>
+                <p class="noscript">Ohne JavaScript geht die Zeitung nicht in Druck. Schalt es an, dann steht die Antwort drin.</p>
+            </noscript>
+        </main>
+    </article>
+</body>
+</html>

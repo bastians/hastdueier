@@ -3,3 +3,8 @@ Thumbs.db
 
 .vscode
 /vendor
+
+# Impeccable: Arbeitsdateien, keine Projektquelle
+/.impeccable/review/
+/.impeccable/questions/
+/.impeccable/hook.cache.json

@@ -1,0 +1,26 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-10-08T16:06:02.768Z",
+        "reason": "Claude (build): the Eilmeldung ticker is a marquee band meant to run edge to edge, and the masthead meta rule sits on 8px padding; both are tabloid furniture"
+      },
+      {
+        "rule": "all-caps-body",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-10-08T16:06:02.830Z",
+        "reason": "Claude (build): the only long uppercase run is the aria-hidden Eilmeldung ticker, set in caps on purpose like a tabloid news crawl"
+      }
+    ]
+  }
+}
